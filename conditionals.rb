@@ -1,7 +1,11 @@
-is_authenticated = false
+role = :admin
 
-if is_authenticated
+if role == :user
+  puts "Hola, usuario"
+if role == :admin
   puts "Eres un admin, bro"
+elsif role == :superadmin
+  puts "No sos mortal, bro"
 else
-  puts "Nope, no eres admin, bro"
+  puts "¿Cuál es tu rol, bro?"
 end
