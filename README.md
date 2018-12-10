@@ -23,9 +23,37 @@ Notes:
 - As well as Python :snake::sweat_smile:, Ruby works without brackets or semicolons but uses tabs:
 
   ```ruby
-  if bla_bla
-    puts do_this
-  else
-    puts do_that
-  end # BTW, I dont like this "end" 👎
+    if bla_bla
+      puts do_this
+    else
+      puts do_that
+    end # BTW, I dont like this "end" 👎
+  ```
+
+- No objects but **hashes**, looks like PHP associative arrays :thinking::
+
+  ```ruby
+    hash = {
+      "key" => "value"
+    }
+    hash["other_key"] = "other_value"
+
+    hash["key"] # => "value"
+    hash["other_key"] # => "other_value"
+
+    hash.invert # {"value"=>"key" ... }
+    hash.merge({ "another_key" => "another_val" }) # {..."another_key"=>"another_val"}
+    hash.empty? # False and I like the ⁉ :D
+    hash.has_value? "other_value" # True and PERFECT 🙌
+
+    hash.map { |key,val| "Key is #{key} and value is #{val}" } # 😎
+    hash.transform_values { |val| v.downcase } # 🆗
+  ```
+
+- Method conventions are awesome, questions need `?` at the end!!!
+
+  ```ruby
+    anything.empty?
+    hash.has_value? "some value"
+    string.include? "some string"
   ```
