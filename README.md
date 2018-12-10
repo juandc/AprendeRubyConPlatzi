@@ -4,18 +4,18 @@ Take the course :wink::green_heart:: [https://platzi.com/cursos/ruby](https://pl
 
 Notes:
 
-- **History**, Ruby creator is [Yukihiro "Matz" Matsumoto](https://en.wikipedia.org/wiki/Yukihiro_Matsumoto) :older_man:
+- Basic **History**, Ruby was created by [Yukihiro "Matz" Matsumoto](https://en.wikipedia.org/wiki/Yukihiro_Matsumoto) :older_man:
 
 - Variables do not need any word like `var` or `const` for been declared, `var = "something"` is enough :+1:
 - Variable names convention is [Snake Case](https://en.wikipedia.org/wiki/Snake_case) (example: `yes_is_admin` or `facilitator_roles_lowercase`) :low_brightness:
 
-- **Symbols** are really cool, they are something like variables but super powered: no value (symbols are the value, amazing :scream::heart_eyes:) and inmutability (always that you call the symbols, Ruby knows what are you talking about, they always have the same id :open_mouth:):
+- **Symbols** are really cool, they are something like variables but super powered: no value (symbols are the value, amazing :scream::heart_eyes:) and inmutability (always that you call the symbols, Ruby knows what are you talking about, they always have the same ID :open_mouth:):
 
   ```ruby
-    puts "juandc".object_id # 123abc
-    puts "juandc".object_id # 166uht ^ hmm, diferent id 🤔
-    puts :juandc.object_id  # 987zsd
-    puts :juandc.object_id  # 987zsd ^ ohh, same id 🍦
+    puts "juandc".object_id # "123abc"
+    puts "juandc".object_id # "166uht": Hmm, same string, diferent ID 🤔
+    puts :juandc.object_id  # "987zsd"
+    puts :juandc.object_id  # "987zsd": Ohh, same symbol and same ID 🍦
   ```
 
 - **Conditionals** do not need parentesis, so clean... :straight_ruler:
@@ -58,14 +58,13 @@ Notes:
     string.include? "some string"
   ```
 
-- I like **Ranges** a lot for adding elements, two dots for results from x to y and three for excluding last el:
+- I like **Ranges** a lot for magic elements, two dots for results from x to y and three for excluding last el:
 
   ```ruby
     # "To Array" for visualizing
+
     (1..3).to_a # [1,2,3]
     (1...3).to_a # [1,2]
-
-    # Also for letters :D
     ('a'..'d').to_a # ['a','b','c','d']
     ('a'...'d').to_a # ['a','b','c']
   ```
