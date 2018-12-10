@@ -57,3 +57,15 @@ Notes:
     hash.has_value? "some value"
     string.include? "some string"
   ```
+
+- I like **Ranges** a lot for adding elements, two dots for results from x to y and three for excluding last el:
+
+  ```ruby
+    # "To Array" for visualizing
+    (1..3).to_a # [1,2,3]
+    (1...3).to_a # [1,2]
+
+    # Also for letters :D
+    ('a'..'d').to_a # ['a','b','c','d']
+    ('a'...'d').to_a # ['a','b','c']
+  ```
