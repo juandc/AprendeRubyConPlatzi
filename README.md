@@ -23,6 +23,7 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
 ## Tabla de Contenidos
 
 - [¿Qué onda con Ruby?](#thinking-qué-onda-con-ruby)
+- [Ventajas y Desventajas](#shaved-ice-ventajas-y-desventajas)
 - [Bases del lenguaje](#basketball-bases-del-lenguaje)
   - [Variables](#variables)
   - [Tipos de datos](#tipos-de-datos)
@@ -49,6 +50,27 @@ Entre sus características podemos destacar las siguientes:
 
 La lectura y escritura del código son muy parecidas al lenguaje humano en ingles :nerd_face:.
 
+## :shaved_ice: Ventajas y Desventajas
+
+**Ventajas**:
+
+- :family: La comunidad es muy grande
+- :notes: Tenemos muchas librerías (mejor conocidas como "gemas") disponibles
+- :small_red_triangle: Updates y parches constantes
+- :older_woman: Tanto tiempo que lleva que ahora es un lenguaje maduro, no hay problemas para llevarlo a producción
+
+**Desventajas:**
+
+- :turtle: Por ser interpretado puede ser lento, debe leerse y entenderse a sí mismo antes de lograr ejecutarse
+- :volcano: Consume mucha memoria
+- :repeat: No soporta paralelismo si utilizamos cruby
+- :money_mouth_face: No tiene una compañia millonaria detras, es completamente dirigido por la comunidad (es bueno y malo al mismo tiempo :confused::grimacing:)
+- :chart_with_downwards_trend: Viene bajando en popularidad desde hace algun tiempo (esta en el top 10 so, no es tan grave)
+
+**Cosas interesantes:**
+
+- :keyboard: [Metaprogramación](https://codigofacilito.com/articulos/que-es-metaprogramacion): Programas que escriben o manipulan otros programas, incluso a sí mismos ♻
+- :minibus: [Domain Specific Languages](https://eamodeorubio.wordpress.com/2010/09/13/%C2%BFque-son-los-dsl-domain-specific-languages/): Lenguajes especializados en modelar o resolver un conjunto específico de problemas (tampoco entendi nada pero pos lo comento :thinking::sweat_smile:)
 
 ## :basketball: Bases del lenguaje
 
