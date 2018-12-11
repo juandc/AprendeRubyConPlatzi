@@ -84,17 +84,37 @@ Muchos métodos que podriamos entender como preguntas (tipo, ¿este número es p
 
 ### Variables
 
-Así como dije antes, Ruby es un lenguaje dinámico, es decir, no necesitamos especificar el tipo de dato que utilizamos para cada variable. Además, tampoco debemos escribir `var`, `const` o `let` para decir que vamos a declarar una variable, es suficiente con solo decir `esto = aquello`:
+Así como dije antes, Ruby es un lenguaje dinámico, es decir, no necesitamos especificar el tipo de dato que utilizamos para cada variable. Además, tampoco debemos escribir `var`, `const` o `let` para declarar variables, es suficiente con solo decir `esto = aquello`:
 
 ```ruby
 mi_variable = "algo genial"
 ```
 
-Por cierto, la convención para declarar variables es :snake: [Snake Case](https://en.wikipedia.org/wiki/Snake_case): todo en minusculas separando las palabras por guiones bajos.
+Por cierto, la convención para declarar variables es :snake: _Snake Case_: todo en minusculas separando las palabras por guiones bajos.
 
 ### Tipos de datos
 
 #### Números
+
+Podemos utilizar números enteros como 5, 4 y 100, y números flotantes, 4.67, 100.76, etc.
+
+Con Ruby todo es un objeto y los números no son la excepción, tenemos muchos métodos muy interesantes para jugar con los números:
+
+```ruby
+i = 5     # integer
+n.odd?    # true
+n.even?   # false
+4/5       # 0
+
+f = 4.12  # float
+f.odd?    # ERROR!!
+4.0/5.0   # 0.8
+4/5.0     # también 0.8
+
+
+# Puedes ver todos los métodos disponibles para cada tipo
+# de dato con `tu_variable_numerica.methods`.
+```
 
 #### Strings
 
