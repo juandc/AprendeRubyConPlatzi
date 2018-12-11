@@ -10,13 +10,13 @@
 
 ---
 
-¡Si señor! Un desarrollador de JavaScript se animó a tomar el [Curso de Ruby](https://platzi.com/cursos/ruby/) en Platzi.
+¡Si señor! Un desarrollador de JavaScript se animó a tomar el [Curso de Ruby](https://platzi.com/cursos/ruby/) en Platzi :tada:.
 
-En este README voy a escribir/documentar todo lo que voy aprendiendo a medida que avanzo con el curso. El objetivo es que, si me gusta, voy a prepararme todo lo que sea posible para seguir con el [Curso de Creación de APIs con Ruby on Rails](https://platzi.com/cursos/ror/) (así le saco mayor provecho a lo que más me gusta: consumir APIs con React.js y, en el mejor de los casos, utilizando GraphQL :heart_eyes::sunglasses:).
+En este README voy a escribir/documentar todo lo que voy aprendiendo a medida que avanzo con el curso. El objetivo es que, si me gusta, me termino de preparar para tomar el [Curso de Creación de APIs con Ruby on Rails](https://platzi.com/cursos/ror/) para sacarle mayor provecho y trabajarle con lo que más me gusta: consumir APIs con React.js y, en el mejor de los casos, utilizando GraphQL :heart_eyes::sunglasses:.
 
 **¿Por qué estudio Ruby?** Bueno, para comenzar, el profe es [@simon0191](https://twitter.com/simon0191) (trabaja en Uber :flushed::open_mouth:) y con solo los primeros vídeos me convencio de que no pierdo nada aprendiendo algo nuevo :muscle:.
 
----
+<!-- --- -->
 
 ## Tabla de Contenidos
 
@@ -26,9 +26,25 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
   - [Tipos de datos](#)
     - [Números](#)
     - [Strings](#)
-    - [Symbols](#)
+    - [Simbolos](#)
     - [Arrays](#)
     - [Hashes](#)
     - [Rangos](#)
   - [Condicionales](#)
   - [Ciclos](#)
+
+## ¿Qué onda con Ruby? :thinking:
+
+Ruby esto y bla bla bla.
+
+## Bases del lenguaje
+
+### Variables
+
+### Tipos de datos
+
+#### Números:
+
+#### Strings:
+
+#### Simbolos:
