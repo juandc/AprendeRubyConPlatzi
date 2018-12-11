@@ -76,12 +76,6 @@ La lectura y escritura del código son muy parecidas al lenguaje humano en ingle
 
 Antes de comenzar, recuerda que puedes utilizar el comando `irb` para ejecutar tu código línea por línea o, si prefieres, utilizar los archivos `.rb` para ejecutarlos con el comando `ruby archivito.rb`.
 
-:eyes: **Dato de vital importancia para entender los siguientes ejemplos:** A Ruby nos permite programar con un lenguaje muy natural y no pierde oportunidad para demostrarnos lo bien que se siente.
-
-¿Recuerdas que Ruby es intenta parecerse al lenguaje natural? Pues, parece que se lo tomaron muy en serio :joy:.
-
-Muchos métodos que podriamos entender como preguntas (tipo, ¿este número es par?) requieren un signo de interrogación (:question:) al final (`number.even?`). Esta solución me parece genial ya que, vengo acostumbrado a JavaScript y la convención seria más bien parecido a algo como `number.isEven()` (aunque, este ejemplo en particular, no existe por defecto en JS :().
-
 ### Variables
 
 Así como dije antes, Ruby es un lenguaje dinámico, es decir, no necesitamos especificar el tipo de dato que utilizamos para cada variable. Además, tampoco debemos escribir `var`, `const` o `let` para declarar variables, es suficiente con solo decir `esto = aquello`:
@@ -91,6 +85,36 @@ mi_variable = "algo genial"
 ```
 
 Por cierto, la convención para declarar variables es :snake: _Snake Case_: todo en minusculas separando las palabras por guiones bajos.
+
+### Métodos
+
+Ruby nos permite programar con un lenguaje muy natural y no pierde oportunidad para demostrarnos lo bien que se siente.
+
+**¿Recuerdas que Ruby es intenta parecerse al ingles natural?** Pues, se lo tomaron muy en serio y no pierden oportunidad para demostrarlo :joy:.
+
+Muchos métodos que podriamos entender como preguntas (tipo, ¿este número es par?) requieren un signo de interrogación (:question:) al final (`number.even?`). Esta solución me parece genial ya que, vengo acostumbrado a JavaScript y la convención seria más bien parecido a algo como `number.isEven()` (aunque, este ejemplo en particular, no existe por defecto en JS :().
+
+```ruby
+5.even      # ERROR!
+5.even()    # ERROR!
+5.isEven    # ERROR!
+5.isEven()  # ERROR!
+
+5.even?     # false 👏👏
+```
+
+Otra cosa: Solo cuando un método acaba con signo de admiración (:exclamation:) se aplica el resultado del método a la variable. Es decir, si `x = "helo"`, despues la transformo a mayúsculas con `x.upcase`, en realidad, `x` sigue teniendo su valor inicial (`"hello"`), si quiero aplicar el resultado del método a la variable debo utilizar el signo de admiración (`x.upcase!`).
+
+```ruby
+x = "hello"
+puts x.upcase # "HELLO" 👍
+puts x        # "hello" 😛
+
+puts x.upcase! # "HELLO"
+puts x         # "HELLO"
+```
+
+Para ver todos los métodos disponibles de cada objeto (osea, de todo) puedes utilizar el también método `cualquier_cosa.methods`.
 
 ### Tipos de datos
 
