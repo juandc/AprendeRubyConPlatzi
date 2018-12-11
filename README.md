@@ -1,70 +1,28 @@
-# Platzi Ruby Simple Basics
+# :gem: Impresiones y Primeras Líneas de Código con Ruby :strawberry::rugby_football:
 
-Take the course :wink::green_heart:: [https://platzi.com/cursos/ruby](https://platzi.com/cursos/ruby/).
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/juandc/platzi-ruby-starter/issues)
+[![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![emoji-log](https://cdn.rawgit.com/ahmadawais/stuff/ca97874/emoji-log/non-flat-round.svg)](https://github.com/ahmadawais/Emoji-Log/)
 
-Notes:
+**Puedes entrar a [platzi.com/cursos/ruby](https://platzi.com/cursos/ruby/) para encontrar más información sobre el curso básico de Ruby.**
 
-- Basic **History**, Ruby was created by [Yukihiro "Matz" Matsumoto](https://en.wikipedia.org/wiki/Yukihiro_Matsumoto) :older_man:
+---
 
-- Variables do not need any word like `var` or `const` for been declared, `var = "something"` is enough :+1:
-- Variable names convention is [Snake Case](https://en.wikipedia.org/wiki/Snake_case) (example: `yes_is_admin` or `facilitator_roles_lowercase`) :low_brightness:
+Si señor, un desarrollador de JavaScript se animó a tomar el [Curso de Ruby](https://platzi.com/cursos/ruby/) en Platzi. En este README voy a escribir/documentar todo lo que voy aprendiendo a medida que avanzo con el curso. El objetivo es que, si me gusta, voy a prepararme todo lo que sea posible para seguir con el [Curso de Creación de APIs con Ruby on Rails](https://platzi.com/cursos/ror/) (así le saco mayor provecho a lo que más me gusta: consumir APIs con React.js y, en el mejor de los casos, utilizando GraphQL :heart_eyes::sunglasses:).
 
-- **Symbols** are really cool, they are something like variables but super powered: no value (symbols are the value, amazing :scream::heart_eyes:) and inmutability (always that you call the symbols, Ruby knows what are you talking about, they always have the same ID :open_mouth:):
+¿Por qué me interesó? Bueno, para comenzar, el profe es [@simon0191](https://twitter.com/simon0191) (trabaja en Uber :flushed::open_mouth:) y con solo los primeros vídeos me convencio de que no pierdo nada aprendiendo algo nuevo :muscle:.
 
-  ```ruby
-    puts "juandc".object_id # "123abc"
-    puts "juandc".object_id # "166uht": Hmm, same string, diferent ID 🤔
-    puts :juandc.object_id  # "987zsd"
-    puts :juandc.object_id  # "987zsd": Ohh, same symbol and same ID 🍦
-  ```
+---
 
-- **Conditionals** do not need parentesis, so clean... :straight_ruler:
-
-- As well as Python :snake::sweat_smile:, Ruby works without brackets or semicolons but uses tabs:
-
-  ```ruby
-    if bla_bla
-      puts do_this
-    else
-      puts do_that
-    end # BTW, I dont like this "end" 👎
-  ```
-
-- No objects but **hashes**, looks like PHP associative arrays :thinking::
-
-  ```ruby
-    hash = {
-      "key" => "value"
-    }
-    hash["other_key"] = "other_value"
-
-    hash["key"] # => "value"
-    hash["other_key"] # => "other_value"
-
-    hash.invert # {"value"=>"key" ... }
-    hash.merge({ "another_key" => "another_val" }) # {..."another_key"=>"another_val"}
-    hash.empty? # False and I like the ⁉ :D
-    hash.has_value? "other_value" # True and PERFECT 🙌
-
-    hash.map { |key,val| "Key is #{key} and value is #{val}" } # 😎
-    hash.transform_values { |val| v.downcase } # 🆗
-  ```
-
-- Method conventions are awesome, questions need `?` at the end!!!
-
-  ```ruby
-    anything.empty?
-    hash.has_value? "some value"
-    string.include? "some string"
-  ```
-
-- I like **Ranges** a lot for magic elements, two dots for results from x to y and three for excluding last el:
-
-  ```ruby
-    # "To Array" for visualizing
-
-    (1..3).to_a # [1,2,3]
-    (1...3).to_a # [1,2]
-    ('a'..'d').to_a # ['a','b','c','d']
-    ('a'...'d').to_a # ['a','b','c']
-  ```
+- [¿Qué onda con Ruby?](#)
+- [Bases del lenguaje](#)
+  - [Variables](#)
+  - [Tipos de datos](#)
+    - [Números](#)
+    - [Strings](#)
+    - [Symbols](#)
+    - [Arrays](#)
+    - [Hashes](#)
+    - [Rangos](#)
+  - [Condicionales](#)
+  - [Ciclos](#)
