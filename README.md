@@ -44,7 +44,7 @@ Entre sus características podemos destacar las siguientes:
 
 - :raised_hands: **Dinámico**: No debemos especificar los tipos de datos cuando declaramos variables, incluso podemos cambiar el tipo de dato a lo largo de la ejecución.
 - :timer_clock: **Interpretado**: No necesitamos compilar nuestro código para despues si ejecutarlo, más bien, utilizamos algún iterprete para leer y ejecutar el código línea por línea. El interprete por defecto es **CRuby** pero, existen muchas alternativas bien interesantes como [JRuby](https://www.jruby.org/), [MRuby](https://mruby.org/), [Rubinius](https://rubinius.com/), entre otros.
-- :hammer: **Orientado a Objetos**: Las variables son objetos. Los strings son objetos. Los números son objetos. **¡TODO ES UN OBJETO!** A toda cosa que encontramos en Ruby le podemos sacar su "objeto interior" y escribir código tipo `cosa_cualquiera.método_cualquiera.esto_es_un_objeto.esto_tambien`.
+- :hammer: **Orientado a Objetos**: Los strings son objetos, los números son objetos, ¡todo es un objeto! Cualquier "cosa" que encontramos en Ruby tiene métodos muy útiles para obtener resultados inetersantes, cualquier cosa punto cualquier otra cosa puede incluso devolver otra cosa que también es un objeto con métodos: `cosa_cualquiera.método_cualquiera.metodo_del_metodo.tambien_soy_objeto.etc.etc.etc`.
 
 **:massage: Los objetivos de Ruby son aumentar nuestra felicidad y productividad :muscle:**
 
@@ -73,6 +73,14 @@ La lectura y escritura del código son muy parecidas al lenguaje humano en ingle
 - :minibus: [Domain Specific Languages](https://eamodeorubio.wordpress.com/2010/09/13/%C2%BFque-son-los-dsl-domain-specific-languages/): Lenguajes especializados en modelar o resolver un conjunto específico de problemas (tampoco entendi nada pero pos lo comento :thinking::sweat_smile:)
 
 ## :basketball: Bases del lenguaje
+
+Antes de comenzar, recuerda que puedes utilizar el comando `irb` para ejecutar tu código línea por línea o, si prefieres, utilizar los archivos `.rb` para ejecutarlos con el comando `ruby archivito.rb`.
+
+:eyes: **Dato de vital importancia para entender los siguientes ejemplos:** A Ruby nos permite programar con un lenguaje muy natural y no pierde oportunidad para demostrarnos lo bien que se siente.
+
+¿Recuerdas que Ruby es intenta parecerse al lenguaje natural? Pues, parece que se lo tomaron muy en serio :joy:.
+
+Muchos métodos que podriamos entender como preguntas (tipo, ¿este número es par?) requieren un signo de interrogación (:question:) al final (`number.even?`). Esta solución me parece genial ya que, vengo acostumbrado a JavaScript y la convención seria más bien parecido a algo como `number.isEven()` (aunque, este ejemplo en particular, no existe por defecto en JS :().
 
 ### Variables
 
