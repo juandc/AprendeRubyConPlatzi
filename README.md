@@ -84,6 +84,14 @@ Muchos métodos que podriamos entender como preguntas (tipo, ¿este número es p
 
 ### Variables
 
+Así como dije antes, Ruby es un lenguaje dinámico, es decir, no necesitamos especificar el tipo de dato que utilizamos para cada variable. Además, tampoco debemos escribir `var`, `const` o `let` para decir que vamos a declarar una variable, es suficiente con solo decir `esto = aquello`:
+
+```ruby
+mi_variable = "algo genial"
+```
+
+Por cierto, la convención para declarar variables es :snake: [Snake Case](https://en.wikipedia.org/wiki/Snake_case): todo en minusculas separando las palabras por guiones bajos.
+
 ### Tipos de datos
 
 #### Números
