@@ -26,6 +26,7 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
 - [Ventajas y Desventajas](#shaved-ice-ventajas-y-desventajas)
 - [Bases del lenguaje](#basketball-bases-del-lenguaje)
   - [Variables](#variables)
+  - [Métodos](#métodos)
   - [Tipos de datos](#tipos-de-datos)
     - [Números](#números)
     - [Strings](#strings)
@@ -92,7 +93,7 @@ Ruby nos permite programar con un lenguaje muy natural y no pierde oportunidad p
 
 **¿Recuerdas que Ruby es intenta parecerse al ingles natural?** Pues, se lo tomaron muy en serio y no pierden oportunidad para demostrarlo :joy:.
 
-Muchos métodos que podriamos entender como preguntas (tipo, ¿este número es par?) requieren un signo de interrogación (:question:) al final (`number.even?`). Esta solución me parece genial ya que, vengo acostumbrado a JavaScript y la convención seria más bien parecido a algo como `number.isEven()` (aunque, este ejemplo en particular, no existe por defecto en JS :().
+Muchos métodos que podriamos entender como preguntas (tipo, ¿este número es par?) requieren un signo de interrogación (:question:) al final (`number.even?`). Esta solución me parece genial ya que, vengo acostumbrado a JavaScript y la convención seria más bien parecido a algo como `number.isEven()` (aunque, este ejemplo en particular, no existe por defecto en JS :sob:).
 
 ```ruby
 5.even      # ERROR!
