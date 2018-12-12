@@ -225,6 +225,29 @@ Si esto fue demaciada filosofía para tu gusto, puedes encontrar mejor informaci
 
 #### Arrays
 
+Los Arrays nos permiten almacenar multiples variables de cualquier otro tipo en una sola variable, es decir, son exactamente lo mismo que en otros lenguajes como JavaScript :sweat_smile::
+
+```ruby
+animals = ["cat", "dog", "mouse"]
+
+animals.size  # 3
+animals[0]    # "cat"
+animals[-1]   # "mouse" - los números negativos cuentan de para atras 😮)
+animals[100]  # nil - no existe :P
+
+animals.sort            # ordenados alfabeticamente
+animals.include? "cow"  # false
+animals + ["cow"]       # ["cat"..."cow"] - nuevo array con el contenido de los otros
+animals - ["mouse"]     # ["cat","dog"] - adios a los elementos que se repiten 👋
+
+animals.map { |animal| animal.upcase } # ["CAT","DOG"...] - el mismo arreglo con los elementos modificados
+animals.select { |animal| animal.include? "a" } # ["cat"] - solo los elementos que cumplen las condiciones
+animals.count { |animal| animal.include? "a" } # 1 - cuenta los elementos que cumplen las condiciones
+
+animals<<"cow"      # agrega elementos permanentemente 👀
+animals.push "cow"  # lo mismo pero con mejor sintaxis
+```
+
 #### Hashes
 
 #### Rangos
