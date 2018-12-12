@@ -225,7 +225,7 @@ Si esto fue demaciada filosofía para tu gusto, puedes encontrar mejor informaci
 
 #### Arrays
 
-Los Arrays nos permiten almacenar multiples variables de cualquier otro tipo en una sola variable, es decir, son exactamente lo mismo que en otros lenguajes como JavaScript :sweat_smile::
+Los Arrays nos permiten almacenar multiples valores de cualquier tipo en una sola variable, es decir, son exactamente lo mismo que en otros lenguajes como JavaScript :sweat_smile::
 
 ```ruby
 animals = ["cat", "dog", "mouse"]
@@ -249,6 +249,28 @@ animals.push "cow"  # lo mismo pero con mejor sintaxis
 ```
 
 #### Hashes
+
+Los Hashes no son más que el nombre de Ruby para lo que en JavaScript conocemos como "Objetos", en Python como "Dicionarios", en PHP como "Arrays asociativos" y en otros lenguajes como mapas.
+
+Así como los arrays, nos permiten almacenar multiples valores/variables, pero, en vez de solo agregar "nombres clave" para los valores que vamos a guardar, esdecir, los guardamos en forma de `"llave" => valor`:
+
+```ruby
+student_info = {
+  "name" => "Juan",
+  "last_name" => "Castro"
+}
+student_info["age"] = 15
+
+puts student_info # {"name"=>"Juan","last_name"=>"Castro","age"=>15}
+puts student_info["name"] # "Juan"
+
+student_info.has_hey? "name"      # true 👍
+student_info.has_value? "Castro"  # true 👍
+
+student_info.invert # {"Juan"=>"name","Castro"=>"last_name",15=>"age"}
+student_info.merge({"course"=>"Ruby")} # {"name"=>"Juan" ... "course"=>"Ruby"}
+student_info.transform_values(&:upcase) # si, transforma los valores, pero en este caso da error porque no podemos poner números en mayúsculas
+```
 
 #### Rangos
 
