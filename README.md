@@ -182,47 +182,52 @@ puts name         # "JUAN ROJAS" 🎉
 
 #### Símbolos
 
-Los símbolos son algo muy parecido a los strings pero mucho más geniales. Nos ayudan a ocupar menos espacio en memoria ya impresionar a cualqueir novato que se pase por nuestro código.
+Los símbolos son algo muy parecido a los strings pero mucho más genial. Nos ayudan a ocupar menos espacio en memoria y a impresionar a cualqueir novato que se pase por nuestro código :smirk:.
 
-Ruby asigna un identificador único para cada variable que asignamos, es decir, dos cosas cn el mismo ID son exactamente los mismo, así que, dos cosas con ID diferente son dos cosas completamente diferentes. Por si no fui suficientemente claro explico con un ejemplo:
+Ruby asigna un identificador único para cada variable que asignamos, es decir, dos cosas cn el mismo ID son exactamente los mismo, así que, dos cosas con ID diferente son dos cosas completamente diferentes. Por si no fui suficientemente claro les explico con un ejemplo:
 
 ```ruby
 string_1 = "un texto"
 string_2 = "un texto" # el string es el mismo peeeero
 
 string_1.object_id    # 47227207790240
-string_2.object_id    # 47227207969220 (son diferentes 😱)
+string_2.object_id    # 47227207969220 (los IDs son diferentes 😱)
 ```
 
 Esto significa que, aunque dos variables tengan el mismo valor, Ruby los guarda y los utiliza como dos cosas completamente diferentes.
 
-Aquí entran los símbolos: Son la representación de algún valor ahorrando la memoria que utilizamos al almacenar cada instancia con el mismo valor en forma string. Si no fui suficientemente claro explico con un ejemplo:
+Aquí entran los símbolos: _"Los Símbolos son la representación de algún valor que nos permite ahorrar la memoria que utilizamos al almacenar cada instancia con el mismo valor en forma string"_. De nuevo, si no fui suficientemente claro les explico con ejemplo:
 
 ```ruby
 # los símbolos se declaran con dos puntos al inicio (:)
 :pepe
-:pepe.object_id   # "1256668"
+:pepe.object_id   # "1256668" 👀
 
-# guardemos :pepe en una variable:
+# ahora guardemos :pepe en una variable:
 name = :pepe
 name.object_id    # "1256668" (¡tienen el mismo id! 😱)
 
-# ahora guardemos a `name` en otra variable
+# ahora guardemos a `name` en oootra variable:
 name_2 = name
 name_2.object_id  # "1256668" (¡también tienen el mismo id! 😱)
 ```
 
-Pero, **¿podemos asignar algun valor a nuestros símbolos? ¿Qué significa `:pepe` realmente?** :thinking::flushed:
+Ahora loas preguntas: **¿Podemos asignar algun valor a nuestros símbolos? ¿Qué significa `:pepe` realmente?** :thinking::flushed:
 
-Bueno, `:pepe` es la llave y el valor, la pregunta y su respuesta. En realidad, `:pepe` significa lo que tu quieras que signifique. Siempre que algo significa `:pepe`, Ruby sabe que hablamos con `:pepe` disfrasado de alguna otra variable.
+Bueno, `:pepe` es la llave y su valor; la pregunta y su respuesta. En realidad, `:pepe` significa lo que tu quieras que signifique. De hecho, siempre que algo significa `:pepe`, Ruby sabe que hablamos con `:pepe` disfrazado de alguna otra variable.
 
 > **`:pepe` es `:pepe`** y fin de la discusión...
 
-Más info en elsiguiente enlace: [Entendiendo los símbolos en Ruby](https://predeciblementeimpredecible.wordpress.com/2005/11/15/entendiendo-los-simbolos-en-ruby/).
+Si esto fue demaciada filosofía para tu gusto, puedes encontrar mejor información con los siguientes enlaces:
+
+- [Entendiendo los Símbolos en Ruby](https://predeciblementeimpredecible.wordpress.com/2005/11/15/entendiendo-los-simbolos-en-ruby/)
+- [Syntactic sugar methods in Ruby - Ruby Magic](https://blog.appsignal.com/2018/02/20/ruby-magic-syntactic-sugar-methods.html)
 
 #### Arrays
 
 #### Hashes
+
+#### Rangos
 
 ### Condicionales
 
