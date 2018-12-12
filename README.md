@@ -85,15 +85,13 @@ Así como dije antes, Ruby es un lenguaje dinámico, es decir, no necesitamos es
 mi_variable = "algo genial"
 ```
 
-Por cierto, la convención para declarar variables es :snake: _Snake Case_: todo en minusculas separando las palabras por guiones bajos.
+Por cierto, la convención para declarar variables es :snake: [Snake Case](https://en.wikipedia.org/wiki/Snake_case): todo en minusculas separando las palabras por guiones bajos.
 
 ### Métodos
 
-Ruby nos permite programar con un lenguaje muy natural y no pierde oportunidad para demostrarnos lo bien que se siente.
+**¿Recuerdas que Ruby intenta parecerse al ingles natural?** Pues, se lo tomaron muy en serio y no pierden oportunidad para demostrarlo :joy:.
 
-**¿Recuerdas que Ruby es intenta parecerse al ingles natural?** Pues, se lo tomaron muy en serio y no pierden oportunidad para demostrarlo :joy:.
-
-Muchos métodos que podriamos entender como preguntas (tipo, ¿este número es par?) requieren un signo de interrogación (:question:) al final (`number.even?`). Esta solución me parece genial ya que, vengo acostumbrado a JavaScript y la convención seria más bien parecido a algo como `number.isEven()` (aunque, este ejemplo en particular, no existe por defecto en JS :sob:).
+Muchos métodos que podriamos entender como preguntas tipo, ¿este número es par? requieren un signo de interrogación (:question:) al final (por ejemplo, `number.even?`). Esta solución me parece genial ya que, vengo acostumbrado a JavaScript y la convención seria más bien parecido a algo como `number.isEven()` (aunque, este ejemplo en particular, no existe por defecto en JS :sob:).
 
 ```ruby
 5.even      # ERROR!
@@ -104,44 +102,83 @@ Muchos métodos que podriamos entender como preguntas (tipo, ¿este número es p
 5.even?     # false 👏👏
 ```
 
-Otra cosa: Solo cuando un método acaba con signo de admiración (:exclamation:) se aplica el resultado del método a la variable. Es decir, si `x = "helo"`, despues la transformo a mayúsculas con `x.upcase`, en realidad, `x` sigue teniendo su valor inicial (`"hello"`), si quiero aplicar el resultado del método a la variable debo utilizar el signo de admiración (`x.upcase!`).
+Solo cuando un método acaba con signo de admiración (:exclamation:) se aplica el resultado del método a la variable. Es decir, si `x = "helo"` y despues la transformo a mayúsculas con `x.upcase`, en realidad, `x` sigue teniendo su valor inicial (`"hello"`) y si quiero aplicar el resultado del método a la variable debo utilizar el signo de admiración (`x.upcase!`):
 
 ```ruby
 x = "hello"
-puts x.upcase # "HELLO" 👍
-puts x        # "hello" 😛
+puts x.upcase  # "HELLO" 👍
+puts x         # "hello" 😛
 
 puts x.upcase! # "HELLO"
 puts x         # "HELLO"
 ```
 
-Para ver todos los métodos disponibles de cada objeto (osea, de todo) puedes utilizar el también método `cualquier_cosa.methods`.
+> Para ver todos los métodos disponibles de cada objeto (osea, de todo) puedes utilizar el también método `cualquier_cosa.methods`.
 
 ### Tipos de datos
 
 #### Números
 
-Podemos utilizar números enteros como 5, 4 y 100, y números flotantes, 4.67, 100.76, etc.
+Podemos utilizar números enteros como 5, 4 y 100, o, números flotantes (es decir, con decimales) como 4.67, 100.76, etc.
 
 Con Ruby todo es un objeto y los números no son la excepción, tenemos muchos métodos muy interesantes para jugar con los números:
 
 ```ruby
 i = 5     # integer
-n.odd?    # true
-n.even?   # false
-4/5       # 0
+i.odd?    # true
+i.even?   # false
+4/5       # 0 (las operaciones entre enteros solo devuelven otros enteros)
 
 f = 4.12  # float
-f.odd?    # ERROR!!
-4.0/5.0   # 0.8
+f.odd?    # ERROR!! (esto no es un entero)
+4.0/5.0   # 0.8 (ahora si, con decimales)
 4/5.0     # también 0.8
-
-
-# Puedes ver todos los métodos disponibles para cada tipo
-# de dato con `tu_variable_numerica.methods`.
 ```
 
 #### Strings
+
+Ruby nos permite declarar variables con comillas dobles (`"string"`), comillas simples (`'string'`) y los comandos bien extraños de `%q(string)` y `%Q(string)`. También podemos utilizar variables u operaciones matemáticas dentro de los strings (con una syntaxis muy parecida a la de los _template literals_ en JavaScript: `#{variable}` :o) pero, solo funciona en algunos casos:
+
+```ruby
+name = "Juan Rojas"
+age  = 23
+
+custom_string = "Hola, #{name}" # "Hola, Juan Rojas" 👍
+other_string  = 'Edad: #{age}'  # 'Tengo #{age} años' 👎
+
+strange_string = %Q(Nombre: #{name})  # Nombre: Juan Rojas 👍
+another_string = %q(Edad: #{edad})    # Edad: #{edad} 👎
+
+# También podemos hacer todo tipo de operaciones:
+math_str1 = "1 + 1 = #{1 + 1}"       # "1 + 1 = 2" 👍
+math_str2 = "Aleatorio: #{rand(10)}" # "Aleatorio [cualquier número entre 0 y 10]" 👍
+```
+
+Por su puesto, en Ruby todo es un objeto y los strings tampoco son la excepción, tenemos muchos métodos y los que más vamos a utilizar (y los más cheveres :grimacing:) son estos:
+
+```ruby
+name = "Juan Rojas"
+
+name.upcase   # "JUAN ROJAS" ⏫
+name.downcase # "juan rojas" ⏬
+name.swapcase # "jUAN rOJAS" 🏄
+
+name.include? "s"         # true 🔠
+name.empty? "s"           # false 🌽
+name.gsub("Juan", "Jose") # "Jose Rojas" 🔄
+
+"  ola  ".strip # "ola" (ahora sin espacios, equivalente a `.trim()` en JS 👍)
+```
+
+**Recordatorio de suma importancia**: No importa cuantas veces aplicamos métodos extraños sobre nuestra variable `name`, ella sigue teniendo el mismo valor con el que la declaramos originalmente. Si quieremos cambiarla de raiz debemos utilizar el signo de admiración (❕) al final:
+
+```ruby
+puts name         # "Juan Rojas"
+puts name.upcase  # "JUAN ROJAS"
+puts name         # "Juan Rojas" 😱
+puts name.upcase! # "JUAN ROJAS"
+puts name         # "JUAN ROJAS" 🎉
+```
 
 #### Símbolos
 
