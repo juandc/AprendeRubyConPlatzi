@@ -290,12 +290,12 @@ Me encanta la syntaxis, sobretodo cuando se utilizar junto con otros métodos, c
 # EACH (old) way
 [1,2,3,4].each { |each_times| puts "Hey, #{each_times}" }
 
-# FOR way
+# FOR way (hmmm... ok.)
 for i in 1..4 do
   puts "Hey, #{i}"
 end
 
-# TIMES way
+# TIMES way (BETTER)
 4.times { |times_time| puts "Hey, #{times_time}" }
 
 # Todas estas formas responden igual:
@@ -306,5 +306,33 @@ end
 ```
 
 ### Condicionales
+
+NO hay parentesis. NO hay corchetes. Solo utilizamos la tabulación:
+
+```ruby
+if something
+  do_this
+elsif
+  do_that
+else
+  do_nothing # 😛
+end
+```
+
+Lo único raro es la palabra `end` al final, de resto todo bien :grimacing:...
+
+```ruby
+role = :admin
+
+if role == :user
+  puts "Hola, usuario mortal 😏"
+if role == :admin
+  puts "Sos un admin, bro 😏"
+elsif role == :superadmin
+  puts "Sr. Superadmin, pase usted, bro 😏"
+else
+  puts "¿Cuál es tu rol, bro 😏?"
+end
+```
 
 ### Ciclos
