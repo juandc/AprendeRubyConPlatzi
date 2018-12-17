@@ -274,6 +274,37 @@ student_info.transform_values(&:upcase) # si, transforma los valores, pero en es
 
 #### Rangos
 
+Muchas veces, al trabajar con aplicaciones en React, suelo pasar por momentos de mucha tensión al intentar iterar entre una cantidad de elementos que no tengo disponible en el momento. Es decir, si quiero por ejemplo, añadir dos o más rueditas de "cargando" antes de mostrar el contenido real de la aplicación, tengo dos opciones: copiar y pegar una línea de JSX (:-1:) o, utilizar alguna función medio rara para generar un array con una cierta cantidad de números (la forma más sencilla hasta el momento es: `[...Array(x).keys()]`).
+
+Esto es MUY TEDIOSO. Por defecto, no tenemos formas de generar una cantidad ordenada de números y mucho menos de letras. En cambio, Ruby tiene un método lo mas de simple y sencillo de utilizar, basta con utilizar parentesis y puntos suspuensivos:
+
+```ruby
+(1..5)      # 1, 2, 3, 4, 5
+(1...5)     # 1, 2, 3, 4
+('a'..'d')  # 'a', 'b', 'c', 'd'
+```
+
+Me encanta la syntaxis, sobretodo cuando se utilizar junto con otros métodos, cliclos o condicionales:
+
+```ruby
+# EACH (old) way
+[1,2,3,4].each { |each_times| puts "Hey, #{each_times}" }
+
+# FOR way
+for i in 1..4 do
+  puts "Hey, #{i}"
+end
+
+# TIMES way
+4.times { |times_time| puts "Hey, #{times_time}" }
+
+# Todas estas formas responden igual:
+# "Hey 1"
+# "Hey 2"
+# "Hey 3"
+# "Hey 4"
+```
+
 ### Condicionales
 
 ### Ciclos
