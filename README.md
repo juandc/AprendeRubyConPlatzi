@@ -109,8 +109,8 @@ x = "hello"
 puts x.upcase  # "HELLO" 👍
 puts x         # "hello" 😛
 
-puts x.upcase! # "HELLO"
-puts x         # "HELLO"
+puts x.upcase! # "HELLO" ❕
+puts x         # "HELLO" ✨
 ```
 
 > Para ver todos los métodos disponibles de cada objeto (osea, de todo) puedes utilizar el también método `cualquier_cosa.methods`.
@@ -163,11 +163,11 @@ name.upcase   # "JUAN ROJAS" ⏫
 name.downcase # "juan rojas" ⏬
 name.swapcase # "jUAN rOJAS" 🏄
 
+name.empty?               # false 🌽
 name.include? "s"         # true 🔠
-name.empty? "s"           # false 🌽
 name.gsub("Juan", "Jose") # "Jose Rojas" 🔄
 
-"  ola  ".strip # "ola" (ahora sin espacios, equivalente a `.trim()` en JS 👍)
+"  ola  ".strip # "ola" (ahora sin espacios, es como `.trim()` en JS 👍)
 ```
 
 **Recordatorio de suma importancia**: No importa cuantas veces aplicamos métodos extraños sobre nuestra variable `name`, ella sigue teniendo el mismo valor con el que la declaramos originalmente. Si quieremos cambiarla de raiz debemos utilizar el signo de admiración (❕) al final:
@@ -212,11 +212,11 @@ name_2 = name
 name_2.object_id  # "1256668" (¡también tienen el mismo id! 😱)
 ```
 
-Ahora loas preguntas: **¿Podemos asignar algun valor a nuestros símbolos? ¿Qué significa `:pepe` realmente?** :thinking::flushed:
+Ahora las preguntas importantes: **¿Podemos asignar algun valor a nuestros símbolos? ¿Qué significa `:pepe` realmente?** :thinking::flushed:
 
 Bueno, `:pepe` es la llave y su valor; la pregunta y su respuesta. En realidad, `:pepe` significa lo que tu quieras que signifique. De hecho, siempre que algo significa `:pepe`, Ruby sabe que hablamos con `:pepe` disfrazado de alguna otra variable.
 
-> **`:pepe` es `:pepe`** y fin de la discusión...
+> **`:pepe` es `:pepe`**... Fin de la discusión...
 
 Si esto fue demaciada filosofía para tu gusto, puedes encontrar mejor información con los siguientes enlaces:
 
@@ -252,7 +252,7 @@ animals.push "cow"  # lo mismo pero con mejor sintaxis
 
 Los Hashes no son más que el nombre de Ruby para lo que en JavaScript conocemos como "Objetos", en Python como "Dicionarios", en PHP como "Arrays asociativos" y en otros lenguajes como mapas.
 
-Así como los arrays, nos permiten almacenar multiples valores/variables, pero, en vez de solo agregar "nombres clave" para los valores que vamos a guardar, esdecir, los guardamos en forma de `"llave" => valor`:
+Así como con los arrays, podemos almacenar multiples valores/variables, pero, en vez de solo agregar los valores, podemos asignar "nombres clave" para los valores que vamos a guardar, es decir, los guardamos en forma de `"llave" => valor`:
 
 ```ruby
 student_info = {
@@ -269,7 +269,7 @@ student_info.has_value? "Castro"  # true 👍
 
 student_info.invert # {"Juan"=>"name","Castro"=>"last_name",15=>"age"}
 student_info.merge({"course"=>"Ruby")} # {"name"=>"Juan" ... "course"=>"Ruby"}
-student_info.transform_values(&:upcase) # si, transforma los valores, pero en este caso da error porque no podemos poner números en mayúsculas
+student_info.transform_values(&:upcase) # si, transforma los valores, pero en este caso da error porque no podemos pasar números a mayúsculas
 ```
 
 #### Rangos
