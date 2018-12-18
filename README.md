@@ -284,7 +284,7 @@ Esto es MUY TEDIOSO. Por defecto, no tenemos formas de generar una cantidad orde
 ('a'..'d')  # 'a', 'b', 'c', 'd'
 ```
 
-Me encanta la syntaxis, sobretodo cuando se utilizar junto con otros métodos, cliclos o condicionales (ya lo vemos en la sección de [#Ciclos](#Cicles)).
+Me encanta la syntaxis, sobretodo cuando se utilizar junto con otros métodos, cliclos o condicionales (ya lo vemos en la sección de [#Ciclos](#ciclos)).
 
 ### Condicionales
 
