@@ -284,26 +284,7 @@ Esto es MUY TEDIOSO. Por defecto, no tenemos formas de generar una cantidad orde
 ('a'..'d')  # 'a', 'b', 'c', 'd'
 ```
 
-Me encanta la syntaxis, sobretodo cuando se utilizar junto con otros métodos, cliclos o condicionales:
-
-```ruby
-# EACH (old) way
-[1,2,3,4].each { |each_times| puts "Hey, #{each_times}" }
-
-# FOR way (hmmm... ok.)
-for i in 1..4 do
-  puts "Hey, #{i}"
-end
-
-# TIMES way (BETTER)
-4.times { |times_time| puts "Hey, #{times_time}" }
-
-# Todas estas formas responden igual:
-# "Hey 1"
-# "Hey 2"
-# "Hey 3"
-# "Hey 4"
-```
+Me encanta la syntaxis, sobretodo cuando se utilizar junto con otros métodos, cliclos o condicionales (ya lo vemos en la sección de [#Ciclos](#Cicles)).
 
 ### Condicionales
 
@@ -336,3 +317,41 @@ end
 ```
 
 ### Ciclos
+
+Tampoco utilizamos corchetes o paréntesis. Además de los ciclos normales (`for`, `while`, `loop do`, etc), también tenemos métodos para iterar sobre números o arrays:
+
+```ruby
+# White way - normal
+while_number = 1
+while while_number < 5 do
+  puts "Hey, #{while_number}"
+  while_number += 1
+end
+
+# Loop way - normal
+loop_number = 1
+loop do
+  puts "Hey, #{loop_number}"
+  loop_number += 1
+  break if loop_number >= 5
+end
+
+# For way - normal (with ranges 😮)
+for for_number in 1..4 do
+  puts "Hey, #{for_number}"
+end
+
+# Array "Each" lamda - I like it :)
+# - I do this all time in React with `.map` 😂
+[1,2,3,4].each { |each_number| puts "Hey, #{each_number}" }
+
+# Integer "Times" lambda - I NEED IT IN JS!!!
+# - AWESOMEEEEE
+4.times { |times_number| puts "Hey, #{time_number}" }
+
+# Todas estas formas Tienen la masma respuesta:
+# "Hey 1"
+# "Hey 2"
+# "Hey 3"
+# "Hey 4"
+```
