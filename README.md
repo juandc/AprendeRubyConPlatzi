@@ -36,10 +36,14 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
     - [Rangos](#rangos)
   - [Condicionales](#condicionales)
   - [Ciclos](#ciclos)
+  - [Bloques, Procs y Lambdas](#bloques-procs-y-lambdas)
+    - [Bloques](#bloques)
+    - [Procs](#procs)
+    - [Lambda](#lambda)
 
 ## :thinking: ¿Qué onda con Ruby?
 
-Ruby es un lenguaje de programación _open source_ creado por [Yukihiro "Matz" Matsumoto](https://en.wikipedia.org/wiki/Yukihiro_Matsumoto) en 1995 (aunque no se volvio popular sino hasta 2005 gracias a Rails).
+Ruby es un lenguaje de programación _open source_ creado por [Yukihiro "Matz" Matsumoto](https://en.wikipedia.org/wiki/Yukihiro_Matsumoto) en 1995 (aunque no se volvio popular sino hasta 2005, gracias a _Ruby on Rails_).
 
 Entre sus características podemos destacar las siguientes:
 
@@ -349,9 +353,113 @@ end
 # - AWESOMEEEEE
 4.times { |times_number| puts "Hey, #{time_number}" }
 
-# Todas estas formas Tienen la masma respuesta:
-# "Hey 1"
-# "Hey 2"
-# "Hey 3"
-# "Hey 4"
+# De todas estas formas devolvemos la misma respuesta:
+# => "Hey 1"
+# => "Hey 2"
+# => "Hey 3"
+# => "Hey 4"
 ```
+
+### Bloques, Procs y Lambdas
+
+#### Bloques
+
+Los **bloques** son una sintaxis (muy extraña :alien:) que utilizan algunos métodos para ejecutarse:
+
+```ruby
+variable.metodo { |x| some stuff with x }
+```
+
+De hecho, si lo recuerdas bien, ya hemos utilizado los bloques en métodos como el `.each`:
+
+```ruby
+[1,2,3].each { |number| puts number * 2 } # 2,4,6
+[1,2,3].count { |number| number.odd? } # 2 (1 y 3)
+```
+
+¡Pero Atentención! Uno de mis ultimos grandes descubrimiento (:joy:) fue que también tenemos sintaxis agrandada 👀:
+
+```ruby
+[1,2,3].each do |number|
+  if number.odd?
+    new_number = "#{number}: Este número NO es par"
+  else
+    new_number = "#{number}: Este SI es par 😬"
+  end
+
+  puts new_number
+end
+```
+
+¡Pero Atentención! Aquí encontramos un pequeño dilema: **¡Los bloques NO son objetos!**
+
+![whaaaaa](https://data.whicdn.com/images/62970198/large.png)
+
+Leiste bien. A pesar de que "En Ruby todo es un objeto", los bloques solo son una sintaxis alieligena (:alien:) y nada más. Y bueno, es algo normal que todos podemos superar. Pero no. A Ruby no le importa si lo superamos o no. Tiene que ser el lenguaje "perfecto" y punto.
+
+#### Procs
+
+Les presento a los **Procs** (un nombre corto para "procedure"): Bloques de código con las funcionalidades de un obeto común y corriente que nos permite reutilizar nuestro código en diferentes métodos.
+
+A pesar de que la ejecución es un poco más lenta, nos puede permitir reutilizar bastante código.
+
+La sintaxis seria un poquitín distinta, solo debemos utilizar `Proc.new` antes de escribir el verdadero proc en forma de bloque:
+
+```ruby
+cool_proc = Proc.new { |x| puts x*2 }
+cool_proc.call(7) # 14
+cool_proc.call(10) # 20
+```
+
+Incluso podemos no necesitar pasar ningun argumento para ejecutar los procs:
+
+```ruby
+proc_no_arg = Proc.new { puts "Look mom, no args!" }
+proc_no_arg.call # Look mom, no args!
+```
+
+Para reutilizar nuestros procs en diferentes métodos podemos utilizar el caracter `&`, así le pedimos a Ruby que convierta nuestro proc en un bloque y se ejecute correctamente:
+
+```ruby
+proc_x2 = Proc.new { |x| puts x*2 }
+
+[1,2,3].each(&proc_x2) # 2,4,6
+[7,8,11].each(&proc_x2) # 14,16,22
+```
+
+#### Lambdas
+
+Las **labmdas** son funciones anónimas (sin nombre) muy parecidas, pero con algunas diferencias. La sintaxis es la palabra `lambda` seguida del bloque que queremos reutilizar y tambien utilizamos el `&` para reutilizarla en los métodos que se ejecutan con sintais de bloque:
+
+```ruby
+lamda_x2 = lambda { |x| puts x*2 }
+[1,2,3].each(&lambda_x2) # 2,4,6
+[7,8,11].each(&lambda_x2) # 14,16,22
+```
+
+Hasta ahora no hay ninguna diferencia entre Lambdas y Procs, de hecho, si analizamos las lambdas podemos encontrar que son de tipo proc:
+
+```ruby
+my_proc = Proc.new { puts "Hello world" }
+my_lambda = lambda { puts "Hello World" }
+
+my_proc.class # returns 'Proc' 🆗
+my_lambda.class  # returns 'Proc' 🙊
+```
+
+Claramente deben tener alguna diferencia, si, efectivamente, a diferencia de los procs, las lambdas son un poco más estrictas con la cantidad de argumentos:
+
+```ruby
+my_proc = Proc.new { |x| puts "Hello, #{x}" }
+my_proc.call      # No arguments, returns nil
+my_proc.call(1)   # "Hello, 1"
+my_proc.call(1,2) # "Hello, 1" (what about 2?)
+
+my_lambda = lambda { |x| puts "Hello, #{x}" }
+my_lambda.call      # ArgumentError: wrong number of arguments (0 for 1)
+my_lambda.call(1)   # "Hello, 1"
+my_lambda.call(1,2) # ArgumentError: wrong number of arguments (2 for 1)
+```
+
+> Si quieres más información sobre bloques, procs y lambdas, puedes leer el siguiente artículo de **@awaxman11** :clap::clap::
+> - [Ruby - What is the difference between Blocks, Procs and Lambdas?](http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/)
