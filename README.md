@@ -40,6 +40,8 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
     - [Bloques](#bloques)
     - [Procs](#procs)
     - [Lambda](#lambda)
+- [Programación Orientada a Objetos](#drum-programación-orientada-a-objetos)
+  - [Clases](#clases)
 
 ## :thinking: ¿Qué onda con Ruby?
 
@@ -461,5 +463,96 @@ my_lambda.call(1)   # "Hello, 1"
 my_lambda.call(1,2) # ArgumentError: wrong number of arguments (2 for 1)
 ```
 
-> Si quieres más información sobre bloques, procs y lambdas, puedes leer el siguiente artículo de **@awaxman11** :clap::clap::
-> - [Ruby - What is the difference between Blocks, Procs and Lambdas?](http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/)
+> Si quieres más información sobre bloques, procs y lambdas puedes leer este artículo de **@awaxman11** :clap::clap::
+> - [What is the difference between Blocks, Procs and Lambdas in Ruby?](http://awaxman11.github.io/blog/2013/08/05/what-is-the-difference-between-a-block/)
+
+## :drum: Programación Orientada a Objetos
+
+### Clases
+
+**Los objetos son onjuntos de propiedades y métodos.** Al igual que el resto de bloques de código, las clases NO utilizan corchetes sino la palabra reservada `end` al final de la declaración.
+
+```ruby
+class Hello
+  # ...
+end
+```
+
+En vez de utilizar la función `contructor` para inicializar las clases utiizamos el nombre de `initilize` :ok:. Lo interesante es que, los constructores y cualquier otra función que programamos puede o no necesitar los parentesis. Si nuestra función NO recibe parametros, TAMPOCO necesitamos parentesis :tada::
+
+```ruby
+class Hello
+  def initialize() # NO SIR 👎 -Is this JS? :P
+  end
+
+  def initialize # OHH YEAH! 😎
+  end
+end
+```
+
+¡La forma de configurar variables de instancia es asombrosa! En vez de utilizar `this.variableDeInstancia` basta con declarar las variables con `@`:
+
+```ruby
+class Hello
+  def initialize(name = "World")
+    @name = name # 👏👏👏
+  end
+end
+
+hello = Hello.new("Juancho")
+```
+
+Y, si piensas que esto del `@` esta genial, ¡esperate tantito a ver cómo se declaran los _getters_ y _setters_! (SPOILER: **¡¡NO TIENES!!** :scream::scream::scream:).
+
+**Método #1** (Copiar y pegar):
+
+```ruby
+class Hello
+  def initialize(name = "World")
+    @name = name
+  end
+
+  # el getter (Hello.name)
+  def name
+    @name
+  end
+
+  # el setter (Hello.name = "Nuevo nombre")
+  # un `=` luego del nombre indica que es un setter
+  def name=(new_name)
+    @name = new_name
+    self # obligatorio
+  end
+end
+```
+
+**Método #2** (utilizando `attr_accessor`):
+
+```ruby
+class Hello
+  # Esta solita línea genera los getters y setters
+  # de forma automática 😮
+  attr_accessor :name, :otra_variable, :mas_variables
+
+  def initialize(name = "World")
+    @name = name
+  end
+end
+```
+
+**Método #3** (utilizando `Struct.new`):
+
+```ruby
+# Esta solita línea genera el constructor, los
+# getters y los setters de forma automática 😮
+class Hello < Struct.new(:name)
+  # solo debemos escribir nuestros métodos custom 👏👏👏
+end
+```
+
+**Método #4** (reduciendo `Struct.new`):
+
+```ruby
+# Lo mismo que la anterior pero en una sola línea ¬¬
+Hello < Struct.new(:name)
+```
