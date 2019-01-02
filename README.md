@@ -42,6 +42,7 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
     - [Lambda](#lambda)
 - [Programación Orientada a Objetos](#drum-programación-orientada-a-objetos)
   - [Clases](#clases)
+  - [Módulos](#modulos)
 
 ## :thinking: ¿Qué onda con Ruby?
 
@@ -51,7 +52,7 @@ Entre sus características podemos destacar las siguientes:
 
 - :raised_hands: **Dinámico**: No debemos especificar los tipos de datos cuando declaramos variables, incluso podemos cambiar el tipo de dato a lo largo de la ejecución.
 - :timer_clock: **Interpretado**: No necesitamos compilar nuestro código para despues si ejecutarlo, más bien, utilizamos algún iterprete para leer y ejecutar el código línea por línea. El interprete por defecto es **CRuby** pero, existen muchas alternativas bien interesantes como [JRuby](https://www.jruby.org/), [MRuby](https://mruby.org/), [Rubinius](https://rubinius.com/), entre otros.
-- :hammer: **Orientado a Objetos**: Los strings son objetos, los números son objetos, ¡todo es un objeto! Cualquier "cosa" que encontramos en Ruby tiene métodos muy útiles para obtener resultados inetersantes, cualquier cosa punto cualquier otra cosa puede incluso devolver otra cosa que también es un objeto con métodos: `cosa_cualquiera.método_cualquiera.metodo_del_metodo.tambien_soy_objeto.etc.etc.etc`.
+- :hammer: **Orientado a Objetos**: Los objetos son conjuntos de propiedades y métodos. En Ruby todo es un objeto. Los strings son objetos, los números son objetos, ¡todo es un objeto! Cualquier "cosa" que encontramos en Ruby tiene métodos muy útiles para obtener resultados inetersantes, cualquier_cosa punto cualquier_otra_cosa puede incluso devolver otra_cosa que también es un objeto con métodos: `cosa_cualquiera.método_cualquiera.metodo_del_metodo.tambien_soy_objeto.etc.etc.etc`.
 
 **:massage: Los objetivos de Ruby son aumentar nuestra felicidad y productividad :muscle:**
 
@@ -95,7 +96,7 @@ Por cierto, la convención para declarar variables es :snake: [Snake Case](https
 
 ### Métodos
 
-**¿Recuerdas que Ruby intenta parecerse al ingles natural?** Pues, se lo tomaron muy en serio y no pierden oportunidad para demostrarlo :joy:.
+**¿Recuerdas que Ruby intenta parecerse al ingles natural?** Pues, la verdad que se lo tomaron muy pero muy en serio y no pierden oportunidad para demostrarlo :joy:.
 
 Muchos métodos que podriamos entender como preguntas tipo, ¿este número es par? requieren un signo de interrogación (:question:) al final (por ejemplo, `number.even?`). Esta solución me parece genial ya que, vengo acostumbrado a JavaScript y la convención seria más bien parecido a algo como `number.isEven()` (aunque, este ejemplo en particular, no existe por defecto en JS :sob:).
 
@@ -470,7 +471,7 @@ my_lambda.call(1,2) # ArgumentError: wrong number of arguments (2 for 1)
 
 ### Clases
 
-**Los objetos son onjuntos de propiedades y métodos.** Al igual que el resto de bloques de código, las clases NO utilizan corchetes sino la palabra reservada `end` al final de la declaración.
+Recordando que **los objetos son conjuntos de propiedades y métodos**, vamos a empezar con que, al igual que el resto de bloques de código, las clases NO utilizan corchetes sino la palabra reservada `end` al final de la declaración:
 
 ```ruby
 class Hello
@@ -518,7 +519,7 @@ class Hello
   end
 
   # el setter (Hello.name = "Nuevo nombre")
-  # un `=` luego del nombre indica que es un setter
+  # - un `=` luego del nombre indica que es un setter
   def name=(new_name)
     @name = new_name
     self # obligatorio
@@ -555,4 +556,38 @@ end
 ```ruby
 # Lo mismo que la anterior pero en una sola línea ¬¬
 Hello < Struct.new(:name)
+```
+
+### Módulos
+
+Ya sabemos que las clases nos permiten agrupar funcionalidades que despues podemos customizar para obtener resultados diferentes. Bueno, así como las clases son agrupaciones de funciones y propiedades, **los módulos son agrupaciones de clases** que nos permiten, eso mismo (:stuck_out_tongue_closed_eyes:), agrupar diferentes clases con funcionalidades similares en un solo módulo.
+
+Por ejemplo, el módulo `Restaurante` puede tener las clases `Chef` y `Meserx`, o, el módulo `Reports` puede almacenar las clases `EmailReporter` y `ExcelReporter`.
+
+Las clases o funcionalidades que hacen cosas similares trabajan dentro del mismo "contenedor".
+
+```ruby
+module Restaurante # Notaron que el nombre no utiliza snake_case? 🙊
+  class Chef < Struct.new(:nombre)
+    def lavar_manos # Ahora si, snake_case 🐍
+      puts "Con aguita y con jabón 🌊"
+    end
+
+    def cocinar(platillo, cantidad)
+      puts "#{nombre} esta cocinando #{cantidad} #{platillo}(s) 🍕"
+    end
+  end
+
+  class Meserx
+    def vender
+      puts "Entrada => Plato fuerte => Postre => Baño 💪"
+    end
+
+    # etc etc
+  end
+end
+
+don_francisco = Restaurante::Chef.new("Don Francisco")
+don_francisco.lavar_manos         # Con aguita y con jabón 🌊
+don_francisco.cocinar("Pizza", 5) # Don Francisco esta cocinando 5 Pizza(s) 🍕
 ```
