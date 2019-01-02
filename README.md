@@ -42,7 +42,7 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
     - [Lambda](#lambda)
 - [Programación Orientada a Objetos](#drum-programación-orientada-a-objetos)
   - [Clases](#clases)
-  - [Módulos](#modulos)
+  - [Módulos](#módulos)
 
 ## :thinking: ¿Qué onda con Ruby?
 
