@@ -595,7 +595,7 @@ don_francisco.cocinar("Pizza", 5) # Don Francisco esta cocinando 5 Pizza(s) 🍕
 
 ## :space_invader: Concurrencia vs Paralelismo
 
-Así como mencionamos un poco atras en la sección de "[desventajas](#desventajas)", Ruby NO soporta paralelismo cuando utilizamos el interprete `cruby`. Y claro, claro, pero, ¿qué carambas es el paralelismo? y ¿por qué cuando busco sobre el paralelimso en Ruby también hablamos de concurrencia?
+Así como mencionamos un poco atras en la sección de "[desventajas](#shaved_ice-ventajas-y-desventajas)", Ruby NO soporta paralelismo cuando utilizamos el interprete `cruby`. Y claro, claro, pero, ¿qué carambas es el paralelismo? y ¿por qué cuando busco sobre el paralelimso en Ruby también hablamos de concurrencia?
 
 Pos, no te preocupes, queride amigx. Todo va a quedar suficientemente claro a continuación :point_down:.
 
