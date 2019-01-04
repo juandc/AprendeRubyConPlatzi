@@ -43,6 +43,7 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
 - [Programación Orientada a Objetos](#drum-programación-orientada-a-objetos)
   - [Clases](#clases)
   - [Módulos](#módulos)
+- [Concurrencia vs Paralelismo](#space_invader-concurrencia-vs-paralelismo)
 
 ## :thinking: ¿Qué onda con Ruby?
 
@@ -71,7 +72,7 @@ La lectura y escritura del código son muy parecidas al lenguaje humano en ingle
 
 - :turtle: Por ser interpretado puede ser lento, debe leerse y entenderse a sí mismo antes de lograr ejecutarse
 - :volcano: Consume mucha memoria
-- :repeat: No soporta paralelismo cuando utilizamos cruby
+- :repeat: No soporta paralelismo cuando utilizamos el interprete `cruby`
 - :money_mouth_face: No tiene una compañia millonaria detras, es completamente dirigido por la comunidad (algo bueno y malo al mismo tiempo :confused::grimacing:)
 - :chart_with_downwards_trend: Viene bajando en popularidad desde hace algun tiempo (pero tranqui, sigue y seguira dentro del top 10)
 
@@ -591,3 +592,21 @@ don_francisco = Restaurante::Chef.new("Don Francisco")
 don_francisco.lavar_manos         # Con aguita y con jabón 🌊
 don_francisco.cocinar("Pizza", 5) # Don Francisco esta cocinando 5 Pizza(s) 🍕
 ```
+
+## :space_invader: Concurrencia vs Paralelismo
+
+Así como mencionamos un poco atras en la sección de "[desventajas](#desventajas)", Ruby NO soporta paralelismo cuando utilizamos el interprete `cruby`. Y claro, claro, pero, ¿qué carambas es el paralelismo? y ¿por qué cuando busco sobre el paralelimso en Ruby también hablamos de concurrencia?
+
+Pos, no te preocupes, queride amigx. Todo va a quedar suficientemente claro a continuación :point_down:.
+
+Conocemos al **paralelismo** como dos (o más) tareas que se ejecutan **al mismo tiempo**, de verdad, en el mismo instante.
+
+Pero, esto solo nos deja otra pregunta: ¿Cómo carambas es posible que dos procesos corran al mismo tiempo si ¡una unidad de procesamiento solo puede ejecutar una cosa a la vez!? Y, aunque no lo creas, esa es la respuesta: Una sola unidad de procesamiento NO PUEDE EJECUTAR MÁS DE UN PROCESO A LA VEZ, necesitamos una unidad por cada proceso que queremos ejecutar en paralelo.
+
+Por su puesto, esto nos lleva a la **concurrencia**, dos tareas que _en teoria_ se ejecutan al mismo tiempo pero, en realidad, se ejecutan subprocesos de cada tarea en una sola unidad de procesamiento.
+
+Es decir, la concurrencia es como una persona, solo puede hacer una cosa a la vez pero puede ir haciendo varias cosas a la vez (por ejemplo, cuando cocinamos lentejas, en teoria "solo estas cocinando lentejas" pero no puedes hacer cada subtarea al mismo tiempo), mientras que, el paralelismo puede trabajar en diferentes tareas porque podemos encontrar diferentes trabajadorxs/procesadores realizando cada tarea (por ejemplo, cuando todo el grupo decide cocinar las lentejas, une pica el tomate mientras otre llora con la cebolla y así :wink:).
+
+![Concurrent vs Parallel Coffe Machines](https://joearms.github.io/images/con_and_par.jpg)
+
+Ahora, lo más importante: **¿Ruby soporta estas caracteristicas?** :flushed:
