@@ -45,6 +45,7 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
   - [Módulos](#módulos)
 - [Concurrencia vs Paralelismo](#space_invader-concurrencia-vs-paralelismo)
 - [Gemas y Manejo de Dependencias](#gem-gemas-y-manejo-de-dependencias-hammer_and_pick)
+- [Gemas y Repositorios Interesantes](#ok_hand-gemas-y-repositorios-interesantes)
 
 ## :thinking: ¿Qué onda con Ruby?
 
@@ -635,5 +636,11 @@ source 'https://rubygems.org' # RubyGems es como NPM pero con Gemas de Ruby
 gem 'nombre_de_la_gema', 'versión.de.la.gema'
 ```
 
-> :clap: _Información más completa sobre **Bundler** en el siguiente artículo:_
+> :clap: _Información mucho más completa sobre **Bundler** en el siguiente artículo:_
 > - [Manejo de dependencias en Ruby con Bundler - Germán Escobar](https://blog.makeitreal.camp/manejo-de-dependencias-en-ruby-con-bundler/)
+
+## :ok_hand: Gemas y Repositorios interesantes
+
+- [Ruby 2D](https://github.com/ruby2d/ruby2d) - Aplicaciones 2D multiplataforma en Ruby.
+- [seattlerb/minitest](https://github.com/seattlerb/minitest) - Framework para diferentes tipos de testing: TDD, BDD, simulacros, benchmarking, entre otras. 
+- [reactjs/react-rails](https://github.com/reactjs/react-rails) - Integración de Reactjs cen las vistas y controladores de Rails con SSR y client-side rendering automático.
