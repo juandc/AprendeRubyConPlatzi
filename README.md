@@ -44,6 +44,7 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
   - [Clases](#clases)
   - [Módulos](#módulos)
 - [Concurrencia vs Paralelismo](#space_invader-concurrencia-vs-paralelismo)
+- [Gemas y Manejo de Dependencias](#gem-gemas-y-manejo-de-dependencias-hammer_and_pick)
 
 ## :thinking: ¿Qué onda con Ruby?
 
@@ -610,3 +611,29 @@ Así como mencionamos un poco atras (en la sección de "[desventajas](#shaved_ic
 En cambio, otros interpretes como JRuby o Rubinius SI que permiten la ejecución en paralelo.
 
 Ahora, para mi esto es un tema un poco complejo y aún tengo mucho que estudiar. Si quieres, puedes encontrar muchímima más información sobre cómo manejar los _Threads_ con Ruby tomando el [Curso de Ruby](https://platzi.com/cursos/ruby/) en Platzi (especificamente, la clase **Threads en Ruby** nos explica la teoría y ejemplos prácticos de cómo aplicar estas tareas en nuestro desarrollo).
+
+> :ok_hand: _Tambien te recomiendo esta lectura si quieres trabajar con Paralelismo y Concurrencia en JavaScript:_
+> - [Javascript Asíncrono: La guía definitiva](https://lemoncode.net/lemoncode-blog/2018/1/29/javascript-asincrono#concurrencia-y-paralelismo)
+
+## :gem: Gemas y Manejo de Dependencias :hammer_and_pick:
+
+Las **gemas** son el nombre _cursi_ que le dio la comunidad de Ruby a las librerías/dependencias (código empaquetado que alguien más escribio) que podemos descargar y utilizar en nuestros proyectos.
+
+La instalación es muy sencilla, basta con ejecutar el comando `gem install` seguido del nombre y versión de las gemas que quieres utilizar.
+
+Sin embargo, instalar cada una de las gemas con las versiones que se acomodan a nuestro proyecto puede terminar complicandonos la vida ya que, debemos guardar la información de cada paquete por si cambiamos de computadora, entra un nuevo integrante al equipo o cualquier otra situación común por el estilo.
+
+Aquí entra [Bundler](http://bundler.io/), una gema que podemos descargar con el comando `gem install bundler` y nos permite describir organizadamente las dependencias y versiones de nuestro proyecto en un archivo llamado `Gemfile`.
+
+Gracias a esta herramienta podemos podemos crear y publicar nuestras gemas siguiendo algunos estándares acordados por la comunidad y mantener una documentación actualizada y accesible para todo el equipo.
+
+```ruby
+# Gemfile (ejemplo)
+
+source 'https://rubygems.org' # RubyGems es como NPM pero con Gemas de Ruby
+
+gem 'nombre_de_la_gema', 'versión.de.la.gema'
+```
+
+> :clap: _Información más completa sobre **Bundler** en el siguiente artículo:_
+> - [Manejo de dependencias en Ruby con Bundler - Germán Escobar](https://blog.makeitreal.camp/manejo-de-dependencias-en-ruby-con-bundler/)
