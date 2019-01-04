@@ -595,13 +595,9 @@ don_francisco.cocinar("Pizza", 5) # Don Francisco esta cocinando 5 Pizza(s) 🍕
 
 ## :space_invader: Concurrencia vs Paralelismo
 
-Así como mencionamos un poco atras en la sección de "[desventajas](#shaved_ice-ventajas-y-desventajas)", Ruby NO soporta paralelismo cuando utilizamos el interprete `cruby`. Y claro, claro, pero, ¿qué carambas es el paralelismo? y ¿por qué cuando busco sobre el paralelimso en Ruby también hablamos de concurrencia?
-
-Pos, no te preocupes, queride amigx. Todo va a quedar suficientemente claro a continuación :point_down:.
-
 Conocemos al **paralelismo** como dos (o más) tareas que se ejecutan **al mismo tiempo**, de verdad, en el mismo instante.
 
-Pero, esto solo nos deja otra pregunta: ¿Cómo carambas es posible que dos procesos corran al mismo tiempo si ¡una unidad de procesamiento solo puede ejecutar una cosa a la vez!? Y, aunque no lo creas, esa es la respuesta: Una sola unidad de procesamiento NO PUEDE EJECUTAR MÁS DE UN PROCESO A LA VEZ, necesitamos una unidad por cada proceso que queremos ejecutar en paralelo.
+Pero, esto solo nos deja otra pregunta: ¿Cómo carambas es posible que dos procesos corran al mismo tiempo si, ¡una unidad de procesamiento solo puede ejecutar una cosa a la vez!? Aunque no lo creas, la respuesta es que Una sola unidad de procesamiento NO PUEDE EJECUTAR MÁS DE UN PROCESO A LA VEZ, necesitamos una unidad por cada proceso que queremos ejecutar en paralelo.
 
 Por su puesto, esto nos lleva a la **concurrencia**, dos tareas que _en teoria_ se ejecutan al mismo tiempo pero, en realidad, se ejecutan subprocesos de cada tarea en una sola unidad de procesamiento.
 
@@ -609,4 +605,8 @@ Es decir, la concurrencia es como una persona, solo puede hacer una cosa a la ve
 
 ![Concurrent vs Parallel Coffe Machines](https://joearms.github.io/images/con_and_par.jpg)
 
-Ahora, lo más importante: **¿Ruby soporta estas caracteristicas?** :flushed:
+Así como mencionamos un poco atras (en la sección de "[desventajas](#shaved_ice-ventajas-y-desventajas)"), Ruby **NO soporta** el paralelismo cuando utilizamos el interprete `cruby`, nisiquiera si nuestro procesador tiene multiple _cores_. Sin embargo, SÍ podemos cambiar de contexto cuando realizamos operaciones por fuera del interprete, así como operaciones de lectura y escritura del disco. Debido a que estos trabajos se realizan por fuera del interprete, `cruby` nos permite ejecutar otro _thread_ mientras estas operaciones terminan y, es de esta manera que podemos trabajar con programación concurrente en Ruby.
+
+En cambio, otros interpretes como JRuby o Rubinius SI que permiten la ejecución en paralelo.
+
+Ahora, para mi esto es un tema un poco complejo y aún tengo mucho que estudiar. Si quieres, puedes encontrar muchímima más información sobre cómo manejar los _Threads_ con Ruby tomando el [Curso de Ruby](https://platzi.com/cursos/ruby/) en Platzi (especificamente, la clase **Threads en Ruby** nos explica la teoría y ejemplos prácticos de cómo aplicar estas tareas en nuestro desarrollo).
