@@ -651,7 +651,7 @@ gem 'nombre_de_la_gema', 'versión.de.la.gema'
 > :clap: _Información mucho más completa sobre **Bundler** en el siguiente artículo:_
 > - [Manejo de dependencias en Ruby con Bundler - Germán Escobar](https://blog.makeitreal.camp/manejo-de-dependencias-en-ruby-con-bundler/)
 
-## Gemas y Repositorios interesantes
+### Gemas y Repositorios interesantes
 
 - [Ruby 2D](https://github.com/ruby2d/ruby2d) - Aplicaciones 2D multiplataforma en Ruby.
 - [seattlerb/minitest](https://github.com/seattlerb/minitest) - Framework para diferentes tipos de testing: TDD, BDD, simulacros, benchmarking, entre otras.
