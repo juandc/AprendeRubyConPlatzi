@@ -12,7 +12,7 @@
 
 ¡Si señor! Un desarrollador de JavaScript se animó a tomar el [Curso de Ruby](https://platzi.com/cursos/ruby/) en Platzi :tada:.
 
-En este README voy a escribir/documentar todo lo que voy aprendiendo a medida que avanzo con el curso :memo:. El objetivo es que, si me gusta, termino de prepararme para tomar el [Curso de Creación de APIs con Ruby on Rails](https://platzi.com/cursos/ror/) y sacarl un mayor provecho a aprender un nevo lenguaje trabajando lo que más me gusta: Construir Aplicaciones con Microservicios :notes: y consumir APIs con React.js :atom_symbol: y GraphQL 🍇 si es posible.
+En este README voy a escribir/documentar todo lo que voy aprendiendo a medida que avanzo con el curso :memo:. El objetivo es que, si me gusta, termino de prepararme para tomar el [Curso de Creación de APIs con Ruby on Rails](https://platzi.com/cursos/ror/) y sacar un mayor provecho a aprender un nevo lenguaje trabajando en lo que más me gusta: Construir Aplicaciones con Microservicios :notes: y consumir APIs con React.js :atom_symbol: y GraphQL 🍇 si es posible.
 
 **¿Por qué estudio Ruby?** El profe [@simon0191](https://twitter.com/simon0191) (que trabaja en Uber :flushed::open_mouth:) me convencio con solo los primeros vídeos de que no pierdo nada aprendiendo algo nuevo :muscle:.
 
