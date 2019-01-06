@@ -12,9 +12,9 @@
 
 ¡Si señor! Un desarrollador de JavaScript se animó a tomar el [Curso de Ruby](https://platzi.com/cursos/ruby/) en Platzi :tada:.
 
-En este README voy a escribir/documentar todo lo que voy aprendiendo a medida que avanzo con el curso :memo:. El objetivo es que, si me gusta, termino de prepararme para tomar el [Curso de Creación de APIs con Ruby on Rails](https://platzi.com/cursos/ror/) y sacarle mayor provecho a todo al trabajar lo que más me gusta: construir aplicaciones por microservicios :notes: y consumir APIs con React.js :atom_symbol: con GraphQL 🍇 si es posible.
+En este README voy a escribir/documentar todo lo que voy aprendiendo a medida que avanzo con el curso :memo:. El objetivo es que, si me gusta, termino de prepararme para tomar el [Curso de Creación de APIs con Ruby on Rails](https://platzi.com/cursos/ror/) y sacarl un mayor provecho a aprender un nevo lenguaje trabajando lo que más me gusta: Construir Aplicaciones con Microservicios :notes: y consumir APIs con React.js :atom_symbol: y GraphQL 🍇 si es posible.
 
-**¿Por qué estudio Ruby?** El profe [@simon0191](https://twitter.com/simon0191) (trabaja en Uber :flushed::open_mouth:) con solo los primeros vídeos me convencio de que no pierdo nada aprendiendo algo nuevo :muscle:.
+**¿Por qué estudio Ruby?** El profe [@simon0191](https://twitter.com/simon0191) (que trabaja en Uber :flushed::open_mouth:) me convencio con solo los primeros vídeos de que no pierdo nada aprendiendo algo nuevo :muscle:.
 
 :nerd_face: **#NuncaParesDeAprender** :green_heart:.
 
@@ -49,21 +49,22 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
   - [¿Qué soporta Ruby?](#qué-soporta-ruby)
 - [Gemas](#gem-gemas)
   - [Manejo de Dependencias](#manejo-de-dependencias)
+  - [Bundler](#bundler)
   - [Gemas y Repositorios interesantes](#gemas-y-repositorios-interesantes)
 
 ## :thinking: ¿Qué onda con Ruby?
 
-Ruby es un lenguaje de programación _open source_ creado por [Yukihiro "Matz" Matsumoto](https://en.wikipedia.org/wiki/Yukihiro_Matsumoto) en 1995 (aunque no se volvio popular sino hasta 2005, gracias a _Ruby on Rails_).
+Ruby es un lenguaje de programación _open source_ creado por [Yukihiro "Matz" Matsumoto](https://en.wikipedia.org/wiki/Yukihiro_Matsumoto) en 1995, aunque no se volvio popular sino hasta 2005, gracias a _Ruby on Rails_.
 
 Entre sus características podemos destacar las siguientes:
 
 - :raised_hands: **Dinámico**: No debemos especificar los tipos de datos cuando declaramos variables, incluso podemos cambiar el tipo de dato a lo largo de la ejecución.
-- :timer_clock: **Interpretado**: No necesitamos compilar nuestro código para despues si ejecutarlo, más bien, utilizamos algún iterprete para leer y ejecutar el código línea por línea. El interprete por defecto es **CRuby** pero, existen muchas alternativas bien interesantes como [JRuby](https://www.jruby.org/), [MRuby](https://mruby.org/), [Rubinius](https://rubinius.com/), entre otros.
-- :hammer: **Orientado a Objetos**: Los objetos son conjuntos de propiedades y métodos. En Ruby todo es un objeto. Los strings son objetos, los números son objetos, ¡todo es un objeto! Cualquier "cosa" que encontramos en Ruby tiene métodos muy útiles para obtener resultados inetersantes, cualquier_cosa punto cualquier_otra_cosa puede incluso devolver otra_cosa que también es un objeto con métodos: `cosa_cualquiera.método_cualquiera.metodo_del_metodo.tambien_soy_objeto.etc.etc.etc`.
+- :timer_clock: **Interpretado**: No necesitamos compilar nuestro código para despues ejecutarlo, más bien, utilizamos algún iterprete para leer y ejecutar el código línea por línea. El interprete por defecto se llama **CRuby** pero existen muchas alternativas interesantes como [JRuby](https://www.jruby.org/), [MRuby](https://mruby.org/), [Rubinius](https://rubinius.com/), entre otras.
+- :hammer: **Orientado a Objetos**: Los objetos son conjuntos de propiedades y métodos. En Ruby todo es un objeto, los strings son objetos, los números son objetos, ¡todo es un objeto! Cualquier "cosa" que encontramos en Ruby tiene métodos muy útiles para obtener resultados inetersantes, cualquier_cosa punto cualquier_otra_cosa puede incluso devolver otra_cosa que también es un objeto otros con métodos: `cosa_cualquiera.método_cualquiera.metodo_del_metodo.tambien_soy_objeto.etc.etc.etc`.
 
-**:massage: Los objetivos de Ruby son aumentar nuestra felicidad y productividad :muscle:**
+**:massage: El objetivo de Ruby es aumentar nuestra felicidad y productividad al programar :muscle:**
 
-La lectura y escritura del código son muy parecidas al lenguaje humano en ingles :nerd_face:.
+La lectura y escritura de código son muy parecidas a trabajar con lenguaje humano (en ingles) :nerd_face:.
 
 ## :shaved_ice: Ventajas y Desventajas
 
@@ -71,8 +72,8 @@ La lectura y escritura del código son muy parecidas al lenguaje humano en ingle
 
 - :family: La comunidad es muy grande
 - :notes: Tenemos muchas librerías disponibles (mejor conocidas como "gemas")
-- :small_red_triangle: Updates y parches de seguridad bien constantes
-- :older_woman: Tanto tiempo lleva que ahora es un lenguaje muy maduro, no tenemos problemas para llevarlo a producción
+- :small_red_triangle: Updates y parches de seguridad constantes
+- :older_woman: Tanto tiempo lleva que ahora es un lenguaje muy maduro, no tendremos problemas para llevarlo a producción
 
 **Desventajas:**
 
@@ -80,7 +81,7 @@ La lectura y escritura del código son muy parecidas al lenguaje humano en ingle
 - :volcano: Consume mucha memoria
 - :repeat: No soporta paralelismo cuando utilizamos el interprete `cruby`
 - :money_mouth_face: No tiene una compañia millonaria detras, es completamente dirigido por la comunidad (algo bueno y malo al mismo tiempo :confused::grimacing:)
-- :chart_with_downwards_trend: Viene bajando en popularidad desde hace algun tiempo (pero tranqui, sigue y seguira dentro del top 10)
+- :chart_with_downwards_trend: Viene bajando en popularidad desde hace algun tiempo (pero todo bien, sigue y seguira en el top 10)
 
 **Cosas interesantes:**
 
@@ -89,23 +90,23 @@ La lectura y escritura del código son muy parecidas al lenguaje humano en ingle
 
 ## :basketball: Bases del lenguaje
 
-Antes de comenzar, recuerda que puedes utilizar el comando `irb` para ejecutar tu código línea por línea o, si prefieres, utilizar los archivos `.rb` para ejecutarlos con el comando `ruby archivito.rb`.
+Antes de comenzar, recuerda que puedes utilizar el comando `irb` para ejecutar tu código línea por línea o, si prefieres, puedes ejecutar los archivos `.rb` utilizando el comando `ruby archivito.rb`.
 
 ### Variables
 
-Así como dije antes, Ruby es un lenguaje dinámico, es decir, no necesitamos especificar el tipo de dato que utilizamos para cada variable. Además, tampoco debemos escribir `var`, `const` o `let` para declarar variables, es suficiente con solo decir `esto = aquello`:
+Como dije antes, Ruby es un lenguaje dinámico, no necesitamos especificar el tipo de dato que utilizamos para cada variable. Además, tampoco debemos escribir `var`, `const`, `let` o alguna palabra clave para declarar variables, con solo decir `esto = aquello` es más que suficiente:
 
 ```ruby
 mi_variable = "algo genial"
 ```
 
-Por cierto, la convención para declarar variables es :snake: [Snake Case](https://en.wikipedia.org/wiki/Snake_case): todo en minusculas separando las palabras por guiones bajos.
+Por cierto, la convención para declarar variables es :snake: [Snake Case](https://en.wikipedia.org/wiki/Snake_case): todo en minusculas y separando las palabras con guiones bajos.
 
 ### Métodos
 
 **¿Recuerdas que Ruby intenta parecerse al ingles natural?** Pues, la verdad que se lo tomaron muy pero muy en serio y no pierden oportunidad para demostrarlo :joy:.
 
-Muchos métodos que podriamos entender como preguntas tipo, ¿este número es par? requieren un signo de interrogación (:question:) al final (por ejemplo, `number.even?`). Esta solución me parece genial ya que, vengo acostumbrado a JavaScript y la convención seria más bien parecido a algo como `number.isEven()` (aunque, este ejemplo en particular, no existe por defecto en JS :sob:).
+Muchos métodos que podriamos entender como preguntas tipo, ¿este número es par? requieren un signo de interrogación (:question:) al final (por ejemplo, `number.even?`). Esta solución me parece genial ya que, vengo acostumbrado a JavaScript y la convención seria más bien parecido a algo como `number.isEven()` (de hecho, este ejemplo en particular no existe por defecto en JS :sob:).
 
 ```ruby
 5.even      # ERROR!
@@ -116,7 +117,7 @@ Muchos métodos que podriamos entender como preguntas tipo, ¿este número es pa
 5.even?     # false 👏👏
 ```
 
-Solo cuando un método acaba con signo de admiración (:exclamation:) se aplica el resultado del método a la variable. Es decir, si `x = "helo"` y despues la transformo a mayúsculas con `x.upcase`, en realidad, `x` sigue teniendo su valor inicial (`"hello"`) y si quiero aplicar el resultado del método a la variable debo utilizar el signo de admiración (`x.upcase!`):
+Solo cuando un método acaba con signo de admiración (:exclamation:) se aplica el resultado del método a la variable. Es decir, si `x = "helo"` y despues la transformo a mayúsculas con `x.upcase`, en realidad, `x` sigue teniendo su valor inicial (`"hello"`) y si quiero aplicar el resultado del método a la variable inicial debemos utilizar el signo de admiración (`x.upcase!`):
 
 ```ruby
 x = "hello"
@@ -230,9 +231,9 @@ Ahora las preguntas importantes: **¿Podemos asignar algun valor a nuestros sím
 
 Bueno, `:pepe` es la llave y su valor; la pregunta y su respuesta. En realidad, `:pepe` significa lo que tu quieras que signifique. De hecho, siempre que algo significa `:pepe`, Ruby sabe que hablamos con `:pepe` disfrazado de alguna otra variable.
 
-> **`:pepe` es `:pepe`**... Fin de la discusión...
+> Conclusión: **`:pepe` es `:pepe`**, fin de la discusión.
 
-Si esto fue demaciada filosofía para tu gusto, puedes encontrar mejor información con los siguientes enlaces:
+Si esto fue demasiada filosofía para tu gusto, puedes encontrar mejor información con los siguientes artículos:
 
 - [Entendiendo los Símbolos en Ruby](https://predeciblementeimpredecible.wordpress.com/2005/11/15/entendiendo-los-simbolos-en-ruby/)
 - [Syntactic sugar methods in Ruby - Ruby Magic](https://blog.appsignal.com/2018/02/20/ruby-magic-syntactic-sugar-methods.html)
@@ -264,9 +265,9 @@ animals.push "cow"  # lo mismo pero con mejor sintaxis
 
 #### Hashes
 
-Los Hashes no son más que el nombre de Ruby para lo que en JavaScript conocemos como "Objetos", en Python como "Dicionarios", en PHP como "Arrays asociativos" y en otros lenguajes como mapas.
+Los Hashes no son más que el nombre de Ruby para lo que, en JavaScript conocemos como "Objetos", en Python como "Dicionarios", en PHP como "Arrays asociativos" y en otros lenguajes como mapas.
 
-Así como con los arrays, podemos almacenar multiples valores/variables, pero, en vez de solo agregar los valores, podemos asignar "nombres clave" para los valores que vamos a guardar, es decir, los guardamos en forma de `"llave" => valor`:
+Así como con los arrays, podemos almacenar multiples valores/variables pero, en vez de solo agregar los valores, podemos asignar "nombres clave" para los valores que vamos a guardar, es decir, los guardamos en forma de `"llave" => valor`:
 
 ```ruby
 student_info = {
@@ -288,7 +289,7 @@ student_info.transform_values(&:upcase) # si, transforma los valores, pero en es
 
 #### Rangos
 
-Muchas veces, al trabajar con aplicaciones en React, suelo pasar por momentos de mucha tensión al intentar iterar entre una cantidad de elementos que no tengo disponible en el momento. Es decir, si quiero por ejemplo, añadir dos o más rueditas de "cargando" antes de mostrar el contenido real de la aplicación, tengo dos opciones: copiar y pegar una línea de JSX (:-1:) o, utilizar alguna función medio rara para generar un array con una cierta cantidad de números (la forma más sencilla hasta el momento es: `[...Array(x).keys()]`).
+Muchas veces, cuando trabajamos con aplicaciones en React pasamos por momentos de mucha tensión al intentar iterar entre una cantidad de elementos que no tenemos disponible en el momento. Es decir, si por ejemplo, queremos añadir dos o más rueditas de "cargando" antes de mostrar el contenido real de la aplicación, tenemos dos opciones: copiar y pegar una línea de JSX (:-1:) o, utilizar alguna función medio rara para generar un array con una cierta cantidad de números (la forma más sencilla hasta el momento es: `[...Array(x).keys()]`).
 
 Esto es MUY TEDIOSO. Por defecto, no tenemos formas de generar una cantidad ordenada de números y mucho menos de letras. En cambio, Ruby tiene un método lo mas de simple y sencillo de utilizar, basta con utilizar parentesis y puntos suspuensivos:
 
@@ -380,14 +381,14 @@ Los **bloques** son una sintaxis (muy extraña :alien:) que utilizan algunos mé
 variable.metodo { |x| some stuff with x }
 ```
 
-De hecho, si lo recuerdas bien, ya hemos utilizado los bloques en métodos como el `.each`:
+De hecho, si lo recuerdas bien, hemos utilizado estos bloques en métodos como el `.each`:
 
 ```ruby
 [1,2,3].each { |number| puts number * 2 } # 2,4,6
 [1,2,3].count { |number| number.odd? } # 2 (1 y 3)
 ```
 
-¡Pero Atentención! Uno de mis ultimos grandes descubrimiento (:joy:) fue que también tenemos sintaxis agrandada 👀:
+¡Pero Atentención! Uno de mis ultimos grandes descubrimiento (:joy:) fue que también tenemos sintaxis agrandada (con mayor comodidad) 👀:
 
 ```ruby
 [1,2,3].each do |number|
@@ -439,7 +440,7 @@ proc_x2 = Proc.new { |x| puts x*2 }
 
 #### Lambdas
 
-Las **labmdas** son funciones anónimas (sin nombre) muy parecidas, pero con algunas diferencias. La sintaxis es la palabra `lambda` seguida del bloque que queremos reutilizar y tambien utilizamos el `&` para reutilizarla en los métodos que se ejecutan con sintais de bloque:
+Las **labmdas** son funciones anónimas (es decir, funciones sin nombre) muy parecidas a los procs, pero con algunas diferencias. La sintaxis es, la palabra `lambda` seguida del bloque que queremos reutiliza. Tambien utilizamos el `&` para reutilizarla en los métodos que se ejecutan con sintais de bloque:
 
 ```ruby
 lamda_x2 = lambda { |x| puts x*2 }
@@ -457,7 +458,7 @@ my_proc.class # returns 'Proc' 🆗
 my_lambda.class  # returns 'Proc' 🙊
 ```
 
-Claramente deben tener alguna diferencia, si, efectivamente, a diferencia de los procs, las lambdas son un poco más estrictas con la cantidad de argumentos:
+Claramente deben tener alguna diferencia, y si, efectivamente. A diferencia de los procs, las lambdas son un poco más estrictas con la cantidad de argumentos y parámetros:
 
 ```ruby
 my_proc = Proc.new { |x| puts "Hello, #{x}" }
@@ -630,15 +631,17 @@ Ahora, para mi esto es un tema un poco complejo y aún tengo mucho que estudiar.
 
 ### Manejo de Dependencias
 
-Las **gemas** son el nombre _cursi_ que le dio la comunidad de Ruby a las librerías/dependencias (código empaquetado que alguien más escribio) que podemos descargar y utilizar en nuestros proyectos.
+Las **gemas** son el nombre _cursi_ que le dio la comunidad de Ruby a las librerías/dependencias (código empaquetado que alguien más escribio para tí :wink:) que podemos descargar y utilizar en nuestros proyectos.
 
-La instalación es muy sencilla, basta con ejecutar el comando `gem install` seguido del nombre y versión de las gemas que quieres utilizar.
+La instalación es muy sencilla, basta con ejecutar el comando `gem install` seguido del nombre y la versión de las gemas que queremos utilizar.
 
-Sin embargo, instalar cada una de las gemas con las versiones que se acomodan a nuestro proyecto puede terminar complicandonos la vida ya que, debemos guardar la información de cada paquete por si cambiamos de computadora, entra un nuevo integrante al equipo o cualquier otra situación común por el estilo.
+Sin embargo, instalar cada una de las gemas con las versiones que se acomodan a nuestro proyecto puede terminar complicandonos la vida, debemos guardar la información de cada paquete por si cambiamos de computadora o entra un nuevo integrante al equipo, cualquier otra situación común por el estilo puede terminar catastróficamente si no guardamos las versiones exactas de nuestros proyectos.
+
+### Bundler
 
 Aquí entra [Bundler](http://bundler.io/), una gema que podemos descargar con el comando `gem install bundler` y nos permite describir organizadamente las dependencias y versiones de nuestro proyecto en un archivo llamado `Gemfile`.
 
-Gracias a esta herramienta podemos podemos crear y publicar nuestras gemas siguiendo algunos estándares acordados por la comunidad y mantener una documentación actualizada y accesible para todo el equipo.
+Gracias a esta herramienta podemos podemos crear y publicar nuestras gemas siguiendo algunos estándares acordados por la comunidad, además de mantener una documentación actualizada y accesible para todo el equipo.
 
 ```ruby
 # Gemfile (ejemplo)
@@ -655,4 +658,4 @@ gem 'nombre_de_la_gema', 'versión.de.la.gema'
 
 - [Ruby 2D](https://github.com/ruby2d/ruby2d) - Aplicaciones 2D multiplataforma en Ruby.
 - [seattlerb/minitest](https://github.com/seattlerb/minitest) - Framework para diferentes tipos de testing: TDD, BDD, simulacros, benchmarking, entre otras.
-- [reactjs/react-rails](https://github.com/reactjs/react-rails) - Integración de Reactjs cen las vistas y controladores de Rails con SSR y client-side rendering automático.
+- [reactjs/react-rails](https://github.com/reactjs/react-rails) - Integración de Reactjs con las vistas y controladores de Ruby on Rails utilizando SSR y client-side rendering automático.
