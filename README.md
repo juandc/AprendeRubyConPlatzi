@@ -44,8 +44,12 @@ En este README voy a escribir/documentar todo lo que voy aprendiendo a medida qu
   - [Clases](#clases)
   - [Módulos](#módulos)
 - [Concurrencia vs Paralelismo](#space_invader-concurrencia-vs-paralelismo)
-- [Gemas y Manejo de Dependencias](#gem-gemas-y-manejo-de-dependencias-hammer_and_pick)
-- [Gemas y Repositorios Interesantes](#ok_hand-gemas-y-repositorios-interesantes)
+  - [Paralelismo](#paralelismo)
+  - [Concurrencia](#concurrencia)
+  - [¿Qué soporta Ruby?](#qué-soporta-ruby)
+- [Gemas](#gem-gemas)
+  - [Manejo de Dependencias](#manejo-de-dependencias)
+  - [Gemas y Repositorios interesantes](#gemas-y-repositorios-interesantes)
 
 ## :thinking: ¿Qué onda con Ruby?
 
@@ -597,15 +601,21 @@ don_francisco.cocinar("Pizza", 5) # Don Francisco esta cocinando 5 Pizza(s) 🍕
 
 ## :space_invader: Concurrencia vs Paralelismo
 
+### Paralelismo
+
 Conocemos al **paralelismo** como dos (o más) tareas que se ejecutan **al mismo tiempo**, de verdad, en el mismo instante.
 
 Pero, esto solo nos deja otra pregunta: ¿Cómo carambas es posible que dos procesos corran al mismo tiempo si, ¡una unidad de procesamiento solo puede ejecutar una cosa a la vez!? Aunque no lo creas, la respuesta es que Una sola unidad de procesamiento NO PUEDE EJECUTAR MÁS DE UN PROCESO A LA VEZ, necesitamos una unidad por cada proceso que queremos ejecutar en paralelo.
 
-Por su puesto, esto nos lleva a la **concurrencia**, dos tareas que _en teoria_ se ejecutan al mismo tiempo pero, en realidad, se ejecutan subprocesos de cada tarea en una sola unidad de procesamiento.
+### Concurrencia
+
+Por su puesto, esto nos lleva a la **concurrencia**: dos tareas que _en teoria_ se ejecutan al mismo tiempo pero, en realidad, se ejecutan subprocesos de cada tarea en una sola unidad de procesamiento.
 
 Es decir, la concurrencia es como una persona, solo puede hacer una cosa a la vez pero puede ir haciendo varias cosas a la vez (por ejemplo, cuando cocinamos lentejas, en teoria "solo estas cocinando lentejas" pero no puedes hacer cada subtarea al mismo tiempo), mientras que, el paralelismo puede trabajar en diferentes tareas porque podemos encontrar diferentes trabajadorxs/procesadores realizando cada tarea (por ejemplo, cuando todo el grupo decide cocinar las lentejas, une pica el tomate mientras otre llora con la cebolla y así :wink:).
 
 ![Concurrent vs Parallel Coffe Machines](https://joearms.github.io/images/con_and_par.jpg)
+
+### ¿Qué soporta Ruby?
 
 Así como mencionamos un poco atras (en la sección de "[desventajas](#shaved_ice-ventajas-y-desventajas)"), Ruby **NO soporta** el paralelismo cuando utilizamos el interprete `cruby`, nisiquiera si nuestro procesador tiene multiple _cores_. Sin embargo, SÍ podemos cambiar de contexto cuando realizamos operaciones por fuera del interprete, así como operaciones de lectura y escritura del disco. Debido a que estos trabajos se realizan por fuera del interprete, `cruby` nos permite ejecutar otro _thread_ mientras estas operaciones terminan y, es de esta manera que podemos trabajar con programación concurrente en Ruby.
 
@@ -616,7 +626,9 @@ Ahora, para mi esto es un tema un poco complejo y aún tengo mucho que estudiar.
 > :ok_hand: _Tambien te recomiendo esta lectura si quieres trabajar con Paralelismo y Concurrencia en JavaScript:_
 > - [Javascript Asíncrono: La guía definitiva](https://lemoncode.net/lemoncode-blog/2018/1/29/javascript-asincrono#concurrencia-y-paralelismo)
 
-## :gem: Gemas y Manejo de Dependencias :hammer_and_pick:
+## :gem: Gemas
+
+### Manejo de Dependencias
 
 Las **gemas** son el nombre _cursi_ que le dio la comunidad de Ruby a las librerías/dependencias (código empaquetado que alguien más escribio) que podemos descargar y utilizar en nuestros proyectos.
 
@@ -639,8 +651,8 @@ gem 'nombre_de_la_gema', 'versión.de.la.gema'
 > :clap: _Información mucho más completa sobre **Bundler** en el siguiente artículo:_
 > - [Manejo de dependencias en Ruby con Bundler - Germán Escobar](https://blog.makeitreal.camp/manejo-de-dependencias-en-ruby-con-bundler/)
 
-## :ok_hand: Gemas y Repositorios interesantes
+## Gemas y Repositorios interesantes
 
 - [Ruby 2D](https://github.com/ruby2d/ruby2d) - Aplicaciones 2D multiplataforma en Ruby.
-- [seattlerb/minitest](https://github.com/seattlerb/minitest) - Framework para diferentes tipos de testing: TDD, BDD, simulacros, benchmarking, entre otras. 
+- [seattlerb/minitest](https://github.com/seattlerb/minitest) - Framework para diferentes tipos de testing: TDD, BDD, simulacros, benchmarking, entre otras.
 - [reactjs/react-rails](https://github.com/reactjs/react-rails) - Integración de Reactjs cen las vistas y controladores de Rails con SSR y client-side rendering automático.
