@@ -659,3 +659,6 @@ gem 'nombre_de_la_gema', 'versión.de.la.gema'
 - [Ruby 2D](https://github.com/ruby2d/ruby2d) - Aplicaciones 2D multiplataforma en Ruby.
 - [seattlerb/minitest](https://github.com/seattlerb/minitest) - Framework para diferentes tipos de testing: TDD, BDD, simulacros, benchmarking, entre otras.
 - [reactjs/react-rails](https://github.com/reactjs/react-rails) - Integración de Reactjs con las vistas y controladores de Ruby on Rails utilizando SSR y client-side rendering automático.
+- [alexdovzhanyn/rydux](https://github.com/alexdovzhanyn/rydux) - Una gema Ruby que trae las funcionalidades de Redux a nuestro backend.
+
+
